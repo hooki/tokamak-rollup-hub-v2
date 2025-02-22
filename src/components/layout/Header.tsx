@@ -8,7 +8,6 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
-    console.log(isMenuOpen);
     if (isMenuOpen) {
       document.documentElement.style.overflowY = "hidden";
     } else {
@@ -22,6 +21,9 @@ export default function Header() {
       px={{ base: "20px", sm: "30px" }}
       justifyContent={"space-between"}
       alignItems={"center"}
+      position={"fixed"}
+      width={"100%"}
+      bgColor={"white"}
     >
       {!isMenuOpen && <LogoComponent />}
       <MenuBarComponent isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
