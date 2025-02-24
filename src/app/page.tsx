@@ -1,6 +1,6 @@
 import TitleComponent from "@/containers/landing-page/TitleComponent";
 import { Flex } from "@chakra-ui/react";
-
+import SolarComponent from "@/containers/landing-page/SolarComponent";
 export default function Home() {
   return (
     <Flex
@@ -9,7 +9,7 @@ export default function Home() {
       left={"0px"}
       className="page-section"
     >
-      <Flex height={"100vh"}></Flex>
+      <SolarComponent />
       <TitleComponent />
     </Flex>
   );

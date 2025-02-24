@@ -7,7 +7,6 @@ export default function UpArrow() {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    console.log(window.scrollY);
     const handleScroll = () => {
       setIsVisible(window.scrollY > 10);
     };
