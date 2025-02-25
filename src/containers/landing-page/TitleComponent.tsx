@@ -1,4 +1,6 @@
 import { Button, Flex, Text } from "@chakra-ui/react";
+import RightArrowIcon from "@/assets/icon/right-arrow.svg";
+import Image from "next/image";
 export default function TitleComponent() {
   return (
     <Flex
@@ -6,7 +8,7 @@ export default function TitleComponent() {
       gap={"30px"}
       width={{ base: "100%", md: "576px" }}
       position={{ base: "relative", md: "absolute" }}
-      bottom={{ base: "0", md: "100px" }}
+      bottom={{ base: "0", md: "180px" }}
       left={{ base: "0", md: "90px" }}
     >
       <Flex flexDirection={"column"} gap={{ base: "12px", md: "18px" }}>
@@ -51,8 +53,9 @@ export default function TitleComponent() {
           px={"15px"}
           py={"12px"}
           borderRadius={"23px"}
+          fontFamily={"Proxima Nova"}
           fontSize={"14px"}
-          fontWeight={"600px"}
+          fontWeight={600}
           lineHeight={"21px"}
           textAlign={"center"}
           border={"2px solid #DFE4EE"}
@@ -67,16 +70,29 @@ export default function TitleComponent() {
           px={"15px"}
           py={"12px"}
           borderRadius={"23px"}
-          fontSize={"14px"}
-          fontWeight={"600px"}
-          lineHeight={"21px"}
           border={"none"}
-          textAlign={"center"}
           background={"#1C1C1C"}
           color={"#FFFFFF"}
           cursor={"pointer"}
+          justifyContent={"center"}
+          alignItems={"center"}
         >
-          Discover
+          <Flex gap={"6px"} alignItems={"center"} justifyContent={"center"}>
+            <Text
+              fontSize={"14px"}
+              fontWeight={600}
+              lineHeight={"21px"}
+              textAlign={"center"}
+            >
+              Discover
+            </Text>
+            <Image
+              src={RightArrowIcon}
+              alt="right-arrow"
+              width={14}
+              height={14}
+            />
+          </Flex>
         </Button>
       </Flex>
     </Flex>

@@ -4,10 +4,11 @@ import SolarComponent from "@/containers/landing-page/SolarComponent";
 export default function Home() {
   return (
     <Flex
-      height={"100vh"}
       position={"relative"}
       left={"0px"}
       className="page-section"
+      height={"100vh"}
+      overflow={"hidden"}
     >
       <SolarComponent />
       <TitleComponent />

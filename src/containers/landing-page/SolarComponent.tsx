@@ -9,12 +9,10 @@ import { PLANETS } from "@/consts/solar";
 export default function SolarComponent() {
   return (
     <Flex
-      height={"100vh"}
       width={"100%"}
       justifyContent={"center"}
       alignItems={"center"}
       className="solar-component"
-      overflowY={"clip"}
     >
       <Box className="solar-component-container">
         <Image src={TrhCenterIcon} alt="trh-center" />
