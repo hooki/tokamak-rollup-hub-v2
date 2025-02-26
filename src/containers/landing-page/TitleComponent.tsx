@@ -8,7 +8,7 @@ export default function TitleComponent() {
       gap={"30px"}
       width={{ base: "100%", md: "576px" }}
       position={{ base: "relative", md: "absolute" }}
-      bottom={{ base: "0", md: "180px" }}
+      bottom={{ base: "0", md: "100px", lg: "130px" }}
       left={{ base: "0", md: "90px" }}
     >
       <Flex flexDirection={"column"} gap={{ base: "12px", md: "18px" }}>
@@ -62,6 +62,7 @@ export default function TitleComponent() {
           background={"rgba(255, 255, 255, 0.25)"}
           color={"#1C1C1C"}
           cursor={"pointer"}
+          _hover={{ background: "#0070ED", color: "#FFFFFF" }}
         >
           Documents
         </Button>
@@ -76,6 +77,7 @@ export default function TitleComponent() {
           cursor={"pointer"}
           justifyContent={"center"}
           alignItems={"center"}
+          _hover={{ background: "#0070ED" }}
         >
           <Flex gap={"6px"} alignItems={"center"} justifyContent={"center"}>
             <Text

@@ -54,6 +54,7 @@ export default function MenuBarComponent({
             textAlign={"center"}
             cursor={"pointer"}
             onClick={() => redirect(item.href)}
+            _hover={{ color: "#0070ED" }}
           >
             {item.label}
           </Text>

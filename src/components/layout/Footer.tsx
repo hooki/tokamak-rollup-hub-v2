@@ -8,7 +8,7 @@ import { GITHUB_URL, TELEGRAM_URL } from "@/consts/socials";
 export default function Footer() {
   return (
     <Flex
-      position={"absolute"}
+      position={{ base: "relative", md: "absolute" }}
       bottom={0}
       px={"30px"}
       py={"24px"}
@@ -32,10 +32,10 @@ export default function Footer() {
           </Text>
         </Text>
         <Flex gap={"12px"} alignItems={"center"} justifyContent={"center"}>
-          <Link href={GITHUB_URL} target="_blank">
+          <Link href={GITHUB_URL} target="_blank" style={{ height: "16px" }}>
             <Image src={GithubIcon} alt="github" />
           </Link>
-          <Link href={TELEGRAM_URL} target="_blank">
+          <Link href={TELEGRAM_URL} target="_blank" style={{ height: "16px" }}>
             <Image src={TelegramIcon} alt="telegram" />
           </Link>
         </Flex>

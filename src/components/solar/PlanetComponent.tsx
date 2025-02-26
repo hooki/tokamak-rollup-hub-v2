@@ -7,16 +7,25 @@ import { keyframes } from "@emotion/react";
 import { PlanetComponentProps } from "@/types/planet";
 import dynamic from "next/dynamic";
 import SatelliteComponent from "./SatelliteComponent";
+import { useBreakpoint } from "@/app/hooks/breakpoint";
 
 export function PlanetComponentContent({
   title,
   size,
-  orbitRadius,
+  orbitRadius: orbitRadiusDesktop,
+  orbitRadiusMobile,
+  orbitRadiusTablet,
   orbitDuration,
   hasSatellite,
 }: PlanetComponentProps) {
   const randomRotation =
     typeof window !== "undefined" ? Math.random() * 360 : 0;
+  const { isMobile, isTablet } = useBreakpoint();
+  const orbitRadius = isTablet
+    ? orbitRadiusTablet
+    : isMobile
+    ? orbitRadiusMobile
+    : orbitRadiusDesktop;
   const orbit = keyframes`
   from {
     transform: translate(-50%, -50%) rotate(${randomRotation}deg) translate(${orbitRadius}px) rotate(${-randomRotation}deg);

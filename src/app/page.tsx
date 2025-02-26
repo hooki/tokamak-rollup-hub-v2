@@ -9,6 +9,7 @@ export default function Home() {
       className="page-section"
       height={"100vh"}
       overflow={"hidden"}
+      flexDir={{ base: "column", md: "row" }}
     >
       <SolarComponent />
       <TitleComponent />
