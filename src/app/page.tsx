@@ -1,18 +1,18 @@
-import TitleComponent from "@/containers/landing-page/TitleComponent";
+import TitleContainer from "@/containers/landing-page/TitleContainer";
 import { Flex } from "@chakra-ui/react";
-import SolarComponent from "@/containers/landing-page/SolarComponent";
+import SolarContainer from "@/containers/landing-page/SolarContainer";
+import DetailContainer from "@/containers/landing-page/DetailContainer";
 export default function Home() {
   return (
     <Flex
       position={"relative"}
-      left={"0px"}
       className="page-section"
-      height={"100vh"}
       overflow={"hidden"}
-      flexDir={{ base: "column", md: "row" }}
+      flexDir={"column"}
     >
-      <SolarComponent />
-      <TitleComponent />
+      <SolarContainer />
+      <TitleContainer />
+      <DetailContainer />
     </Flex>
   );
 }

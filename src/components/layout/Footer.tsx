@@ -7,13 +7,7 @@ import { GITHUB_URL, TELEGRAM_URL } from "@/consts/socials";
 
 export default function Footer() {
   return (
-    <Flex
-      position={{ base: "relative", md: "absolute" }}
-      bottom={0}
-      px={"30px"}
-      py={"24px"}
-      background={"transparent"}
-    >
+    <Flex px={"30px"} py={"24px"} background={"transparent"}>
       <Flex gap={"18px"} alignItems={"center"}>
         <Text
           fontFamily={"Open Sans"}

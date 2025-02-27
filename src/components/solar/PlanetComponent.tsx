@@ -43,7 +43,7 @@ export function PlanetComponentContent({
         justifyContent={"center"}
         alignItems={"center"}
         position={"absolute"}
-        top={"50%"}
+        top={"50vh"}
         left={"50%"}
         animation={`${orbit} ${orbitDuration}s linear infinite`}
       >
@@ -69,7 +69,7 @@ export function PlanetComponentContent({
       </Flex>
       <Box
         position={"absolute"}
-        top={"50%"}
+        top={"50vh"}
         left={"50%"}
         width={orbitRadius * 2}
         height={orbitRadius * 2}
