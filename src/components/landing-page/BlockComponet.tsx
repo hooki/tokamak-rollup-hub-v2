@@ -1,23 +1,25 @@
+"use client";
+import { useBreakpoint } from "@/app/hooks/breakpoint";
 import { Flex, Text } from "@chakra-ui/react";
-import { BUILDING_BLOCKS_TEXT } from "@/consts/texts";
+import { BLOCK_LIST, BUILDING_BLOCKS_TEXT } from "@/consts/texts";
 export default function BlockComponent() {
+  const { width } = useBreakpoint();
   return (
     <Flex flexDir={"column"} gap={"45px"} justifyContent={"center"}>
-      <Flex gap={"40px"} alignItems={"center"}>
-        <Flex
-          minWidth={"700px"}
-          minHeight={"270px"}
-          alignItems={"center"}
-          justifyContent={"center"}
-        >
+      <Flex
+        flexDir={{ base: "column-reverse", lg: "row" }}
+        gap={"40px"}
+        alignItems={"center"}
+      >
+        <Flex minWidth={"50%"} alignItems={"center"} justifyContent={"center"}>
           <video
             loop
             autoPlay
             muted
-            width={"435px"}
-            height={"198px"}
+            height={width < 400 ? "155px" : "198px"}
+            width={width < 400 ? "337px" : "435px"}
             style={{
-              clipPath: "inset(3px)",
+              clipPath: "inset(4px)",
               backgroundColor: "transparent",
               zIndex: -1000,
             }}
@@ -31,14 +33,14 @@ export default function BlockComponent() {
             fontSize={"60px"}
             fontWeight={700}
             lineHeight={"66px"}
-            textAlign={"right"}
+            textAlign={{ base: "center", lg: "right" }}
             letterSpacing={"-1.8px"}
           >
             {BUILDING_BLOCKS_TEXT.title}
           </Text>
           <Text
             color={"#252525"}
-            textAlign={"right"}
+            textAlign={{ base: "center", lg: "right" }}
             fontSize={"16px"}
             fontWeight={400}
             lineHeight={"20px"}
@@ -47,6 +49,26 @@ export default function BlockComponent() {
           </Text>
         </Flex>
       </Flex>
+      {BLOCK_LIST.map((block) => (
+        <Flex key={block.title} flexDir={"column"} gap={"10px"}>
+          <Text
+            fontSize={"40px"}
+            fontWeight={700}
+            lineHeight={"normal"}
+            letterSpacing={"-1.2px"}
+          >
+            {block.title}
+          </Text>
+          <Text
+            color={"#252525"}
+            fontSize={"16px"}
+            fontWeight={400}
+            lineHeight={"20px"}
+          >
+            {block.description}
+          </Text>
+        </Flex>
+      ))}
     </Flex>
   );
 }

@@ -42,3 +42,21 @@ a {
     color-scheme: dark;
   }
 }
+
+.arrow-icon {
+  width: 28px;
+  height: 28px;
+  stroke-width: 5;
+  cursor: pointer;
+  &:hover {
+    color: #0070ed;
+  }
+}
+
+.carousel-item {
+  padding-left: 45px;
+}
+
+.carousel-container {
+  margin-left: -45px;
+}

@@ -1,7 +1,7 @@
 export const MENUBAR_ITEMS = [
   {
-    label: "Deploy",
-    href: "/deploy",
+    label: "Discover",
+    href: "/discover",
   },
   {
     label: "User Guide",

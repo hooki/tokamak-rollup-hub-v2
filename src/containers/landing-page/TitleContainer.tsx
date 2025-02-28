@@ -1,5 +1,5 @@
 "use client";
-import { Button, Flex, Text } from "@chakra-ui/react";
+import { Box, Button, Flex, Text } from "@chakra-ui/react";
 import RightArrowIcon from "@/assets/icon/right-arrow.svg";
 import Image from "next/image";
 import TrhCenterIcon from "@/assets/trh-center.svg";
@@ -12,23 +12,31 @@ export default function TitleContainer() {
       width={"100%"}
       justifyContent={"center"}
       alignItems={"center"}
-      height={"100vh"}
+      height={{ base: "785px", md: "100vh" }}
       position={"relative"}
       className="title-component"
     >
-      <Image
-        src={TrhCenterIcon}
-        alt="trh-center"
-        width={imageWidth}
-        height={imageWidth}
-      />
+      <Box
+        position={{ base: "absolute", md: "relative" }}
+        top={{ base: "285px", md: "0" }}
+        left={{ base: "50%", md: "0" }}
+        transform={{ base: "translate(-50%, 0%)", md: "translate(0%, 0%)" }}
+      >
+        <Image
+          src={TrhCenterIcon}
+          alt="trh-center"
+          width={imageWidth}
+          height={imageWidth}
+        />
+      </Box>
       <Flex
         flexDirection={"column"}
         gap={"30px"}
         width={{ base: "100%", md: "576px" }}
-        position={{ base: "relative", md: "absolute" }}
-        bottom={{ base: "0", md: "60px" }}
-        left={{ base: "0", md: "90px" }}
+        position={"absolute"}
+        alignItems={{ base: "center", md: "flex-start" }}
+        bottom={{ base: "0", md: "30px", lg: "60px" }}
+        left={{ base: "0", md: "30px", lg: "90px" }}
       >
         <Flex flexDirection={"column"} gap={{ base: "12px", md: "18px" }}>
           <Text

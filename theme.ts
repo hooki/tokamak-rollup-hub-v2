@@ -10,7 +10,8 @@ const customConfig = defineConfig({
       sm: "375px",
       md: "800px",
       lg: "1200px",
-      xl: "1920px",
+      xl: "1680px",
+      "2xl": "1920px",
     },
   },
 });
