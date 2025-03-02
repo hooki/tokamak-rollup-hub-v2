@@ -1,7 +1,7 @@
 "use client";
 
 import { MENUBAR_ITEMS } from "@/consts/menubar";
-import { Button, Flex, Text } from "@chakra-ui/react";
+import { Box, Button, Flex, Text } from "@chakra-ui/react";
 import { redirect } from "next/navigation";
 import MenuIcon from "@/assets/icon/menu.svg";
 import CloseIcon from "@/assets/icon/close.svg";

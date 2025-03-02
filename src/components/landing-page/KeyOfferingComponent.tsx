@@ -34,7 +34,7 @@ export default function KeyOfferingComponent() {
               alt={item.title}
             />
             <Text
-              fontSize={"30px"}
+              fontSize={{ base: "28px", sm: "30px" }}
               fontWeight={700}
               lineHeight={"normal"}
               letterSpacing={"-0.9px"}

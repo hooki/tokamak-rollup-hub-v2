@@ -30,7 +30,7 @@ export default function BlockComponent() {
         <Flex flexDir={"column"} gap={"12px"}>
           <Text
             color="#1C1C1C"
-            fontSize={"60px"}
+            fontSize={{ base: "42px", sm: "60px" }}
             fontWeight={700}
             lineHeight={"66px"}
             textAlign={{ base: "center", lg: "right" }}
@@ -52,7 +52,7 @@ export default function BlockComponent() {
       {BLOCK_LIST.map((block) => (
         <Flex key={block.title} flexDir={"column"} gap={"10px"}>
           <Text
-            fontSize={"40px"}
+            fontSize={{ base: "28px", sm: "40px" }}
             fontWeight={700}
             lineHeight={"normal"}
             letterSpacing={"-1.2px"}
