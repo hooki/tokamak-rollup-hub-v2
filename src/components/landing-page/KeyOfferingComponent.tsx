@@ -23,12 +23,7 @@ export default function KeyOfferingComponent() {
         flexDir={{ base: "column", lg: "row" }}
       >
         {KEY_OFFERING_LIST.map((item, index) => (
-          <Flex
-            key={item.title}
-            flexDir={"column"}
-            gap={"15px"}
-            width={{ base: "100%", lg: "450px" }}
-          >
+          <Flex key={item.title} flexDir={"column"} gap={"15px"} width={"100%"}>
             <Image
               src={index === 0 ? Icon1 : index === 1 ? Icon2 : Icon3}
               alt={item.title}

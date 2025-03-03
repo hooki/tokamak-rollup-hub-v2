@@ -32,6 +32,7 @@ export default function EndingComponent() {
         justifyContent={"center"}
         color={"#fff"}
         width={"180px"}
+        height={"45px"}
         border={"none"}
         cursor={"pointer"}
         _hover={{ bg: "#0070ED" }}

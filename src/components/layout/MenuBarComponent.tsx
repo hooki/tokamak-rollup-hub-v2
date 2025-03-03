@@ -19,13 +19,12 @@ export default function MenuBarComponent({
   return (
     <>
       <Button
-        display={{ base: "flex", sm: !isMenuOpen ? "none" : "flex" }}
+        display={{ base: "flex", md: !isMenuOpen ? "none" : "flex" }}
         cursor={"pointer"}
         onClick={() => setIsMenuOpen(!isMenuOpen)}
         position={isMenuOpen ? "absolute" : ""}
         top={22}
         right={22}
-        zIndex={1000}
         bgColor={"transparent"}
         border={"none"}
       >
@@ -42,7 +41,7 @@ export default function MenuBarComponent({
         justifyContent={"center"}
         width={isMenuOpen ? "100%" : ""}
         gap={isMenuOpen ? "39px" : "45px"}
-        display={{ base: isMenuOpen ? "flex" : "none", sm: "flex" }}
+        display={{ base: isMenuOpen ? "flex" : "none", md: "flex" }}
       >
         {MENUBAR_ITEMS.map((item) => (
           <Text
@@ -55,6 +54,7 @@ export default function MenuBarComponent({
             cursor={"pointer"}
             onClick={() => redirect(item.href)}
             _hover={{ color: "#0070ED" }}
+            zIndex={3000}
           >
             {item.label}
           </Text>

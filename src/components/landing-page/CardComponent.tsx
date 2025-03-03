@@ -20,6 +20,7 @@ export default function CardComponent({
       borderRadius={"15px"}
       alignItems={"flex-start"}
       alignSelf={"stretch"}
+      mr={"1px"}
     >
       <Flex gap={"15px"} alignItems={"center"}>
         <Image src={ComponentIcon} alt="component" />

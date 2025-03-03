@@ -74,16 +74,18 @@ export default function TitleContainer() {
             </Text>{" "}
           </Text>
         </Flex>
-        <Flex gap={"15px"}>
+        <Flex gap={"15px"} zIndex={50}>
           <Button
-            w={"132px"}
             px={"15px"}
             py={"12px"}
+            width={"132px"}
+            height={"45px"}
             borderRadius={"23px"}
+            alignItems={"center"}
+            justifyContent={"center"}
             fontFamily={"Proxima Nova"}
             fontSize={"14px"}
             fontWeight={600}
-            lineHeight={"21px"}
             textAlign={"center"}
             border={"2px solid #DFE4EE"}
             background={"rgba(255, 255, 255, 0.25)"}
@@ -98,10 +100,11 @@ export default function TitleContainer() {
             Documents
           </Button>
           <Button
-            w={"132px"}
             px={"15px"}
             py={"12px"}
             borderRadius={"23px"}
+            width={"135px"}
+            height={"45px"}
             border={"none"}
             background={"#1C1C1C"}
             color={"#FFFFFF"}

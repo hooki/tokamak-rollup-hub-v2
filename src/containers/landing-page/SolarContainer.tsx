@@ -9,6 +9,7 @@ export default function SolarContainer() {
       justifyContent={"center"}
       alignItems={"center"}
       className="solar-component"
+      zIndex={1}
     >
       <Box className="solar-component-container">
         {PLANETS.map((planet) => (
