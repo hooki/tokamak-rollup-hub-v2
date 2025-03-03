@@ -2,6 +2,8 @@
 import { useBreakpoint } from "@/app/hooks/breakpoint";
 import { Flex, Text } from "@chakra-ui/react";
 import { BLOCK_LIST, BUILDING_BLOCKS_TEXT } from "@/consts/texts";
+import DotLogoImage from "@/assets/logo/dot-logo.svg";
+import Image from "next/image";
 export default function BlockComponent() {
   const { width } = useBreakpoint();
   return (
@@ -25,6 +27,12 @@ export default function BlockComponent() {
             }}
           >
             <source src={"/mov/building-block.mp4"} type="video/mp4" />
+            <Image
+              src={DotLogoImage}
+              alt="dot-logo"
+              width={width < 400 ? 337 : 435}
+              height={width < 400 ? 155 : 198}
+            />
           </video>
         </Flex>
         <Flex flexDir={"column"} gap={"12px"}>

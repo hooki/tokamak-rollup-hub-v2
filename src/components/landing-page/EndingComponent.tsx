@@ -6,7 +6,7 @@ export default function EndingComponent() {
     <Flex flexDir={"column"} gap={"45px"} alignItems={"center"}>
       <Flex flexDir={"column"} gap={"15px"} alignItems={"center"}>
         <Text
-          fontSize={"24px"}
+          fontSize={{ base: "16px", md: "24px" }}
           fontWeight={400}
           lineHeight={"normal"}
           textAlign={"center"}
