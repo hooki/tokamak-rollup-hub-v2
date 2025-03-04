@@ -9,6 +9,7 @@ export default function Home() {
       className="page-section"
       overflow={"hidden"}
       flexDir={"column"}
+      backgroundColor={"#FAFBFC"}
     >
       <SolarContainer />
       <TitleContainer />

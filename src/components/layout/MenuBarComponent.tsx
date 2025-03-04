@@ -47,7 +47,7 @@ export default function MenuBarComponent({
           <Text
             key={item.label}
             color={"#2E2E3A"}
-            fontSize={"15px"}
+            fontSize={isMenuOpen ? "30px" : "15px"}
             fontWeight={600}
             lineHeight={"normal"}
             textAlign={"center"}
