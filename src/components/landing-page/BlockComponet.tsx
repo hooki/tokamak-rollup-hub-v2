@@ -13,27 +13,18 @@ export default function BlockComponent() {
         gap={"40px"}
         alignItems={"center"}
       >
-        <Flex minWidth={"50%"} alignItems={"center"} justifyContent={"center"}>
-          <video
-            loop
-            autoPlay
-            muted
-            height={width < 400 ? "155px" : "198px"}
-            width={width < 400 ? "337px" : "435px"}
-            style={{
-              clipPath: "inset(4px)",
-              backgroundColor: "transparent",
-              zIndex: 0,
-            }}
-          >
-            <source src={"/mov/building-block.mp4"} type="video/mp4" />
-            <Image
-              src={DotLogoImage}
-              alt="dot-logo"
-              width={width < 400 ? 337 : 435}
-              height={width < 400 ? 155 : 198}
-            />
-          </video>
+        <Flex
+          minWidth={"50%"}
+          alignItems={"center"}
+          justifyContent={"center"}
+          zIndex={0}
+        >
+          <Image
+            src={DotLogoImage}
+            alt="dot-logo"
+            width={width < 400 ? 337 : 435}
+            height={width < 400 ? 155 : 198}
+          />
         </Flex>
         <Flex flexDir={"column"} gap={"12px"}>
           <Text
