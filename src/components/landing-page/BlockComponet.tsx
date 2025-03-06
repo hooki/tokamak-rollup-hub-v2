@@ -23,7 +23,7 @@ export default function BlockComponent() {
             style={{
               clipPath: "inset(4px)",
               backgroundColor: "transparent",
-              zIndex: -1000,
+              zIndex: 0,
             }}
           >
             <source src={"/mov/building-block.mp4"} type="video/mp4" />
