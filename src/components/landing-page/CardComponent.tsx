@@ -1,6 +1,8 @@
+"use client";
 import { Box, Flex, Text } from "@chakra-ui/react";
 import Image from "next/image";
 import ComponentIcon from "@/assets/icon/component.svg";
+import { useState } from "react";
 
 export default function CardComponent({
   title,
@@ -11,6 +13,7 @@ export default function CardComponent({
   description: string;
   featured: boolean;
 }) {
+  const [isHovered, setIsHovered] = useState(false);
   return (
     <Flex
       flexDir={"column"}
@@ -21,6 +24,10 @@ export default function CardComponent({
       alignItems={"flex-start"}
       alignSelf={"stretch"}
       mr={"1px"}
+      bgColor={"#FFF"}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      cursor={"pointer"}
     >
       <Flex gap={"15px"} alignItems={"center"}>
         <Image src={ComponentIcon} alt="component" />
@@ -32,6 +39,7 @@ export default function CardComponent({
             letterSpacing={"-0.6px"}
             _hover={{ color: "#0070ED" }}
             cursor={"pointer"}
+            color={isHovered ? "#0070ED" : "#1C1C1C"}
           >
             {title}
           </Text>
@@ -51,8 +59,12 @@ export default function CardComponent({
         fontWeight={"400"}
         lineHeight={"24px"}
         color={"#252525"}
-        overflow={"hidden"}
-        textOverflow={"ellipsis"}
+        style={{
+          display: "-webkit-box",
+          WebkitLineClamp: 4,
+          WebkitBoxOrient: "vertical",
+          overflow: "hidden",
+        }}
       >
         {description}
       </Text>
