@@ -37,8 +37,8 @@ export default function ComponentCarouselComponent() {
     <Flex flexDir={"column"} gap={"45px"}>
       <Flex
         gap={"24px"}
-        alignItems={{ base: "flex-start", sm: "center" }}
-        flexDirection={{ base: "column", sm: "row" }}
+        alignItems={{ base: "flex-start", md: "center" }}
+        flexDirection={{ base: "column", md: "row" }}
       >
         <Text
           fontSize={{ base: "42px", md: "54px" }}

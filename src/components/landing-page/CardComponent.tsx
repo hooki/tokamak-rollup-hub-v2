@@ -59,9 +59,10 @@ export default function CardComponent({
         fontWeight={"400"}
         lineHeight={"24px"}
         color={"#252525"}
+        minHeight={{ base: "288px", md: "96px" }}
+        WebkitLineClamp={{ base: 12, md: 4 }}
         style={{
           display: "-webkit-box",
-          WebkitLineClamp: 4,
           WebkitBoxOrient: "vertical",
           overflow: "hidden",
         }}
