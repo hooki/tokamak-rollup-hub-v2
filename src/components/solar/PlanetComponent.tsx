@@ -7,7 +7,7 @@ import { keyframes } from "@emotion/react";
 import { PlanetComponentProps } from "@/types/planet";
 import dynamic from "next/dynamic";
 import SatelliteComponent from "./SatelliteComponent";
-import { useBreakpoint } from "@/app/hooks/breakpoint";
+import { useBreakpoint } from "@/hooks/breakpoint";
 
 export function PlanetComponentContent({
   title,

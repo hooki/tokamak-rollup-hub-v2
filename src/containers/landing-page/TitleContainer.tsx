@@ -3,7 +3,7 @@ import { Box, Button, Flex, Text } from "@chakra-ui/react";
 import RightArrowIcon from "@/assets/icon/right-arrow.svg";
 import Image from "next/image";
 import TrhCenterIcon from "@/assets/trh-center.svg";
-import { useBreakpoint } from "@/app/hooks/breakpoint";
+import { useBreakpoint } from "@/hooks/breakpoint";
 export default function TitleContainer() {
   const { isMobile, isTablet } = useBreakpoint();
   const imageWidth = isMobile ? 75 : isTablet ? 125 : 200;

@@ -1,5 +1,5 @@
 "use client";
-import { useBreakpoint } from "@/app/hooks/breakpoint";
+import { useBreakpoint } from "@/hooks/breakpoint";
 import { Box, Flex } from "@chakra-ui/react";
 import Image from "next/image";
 import TrhCenterIcon from "@/assets/trh-center.svg";
