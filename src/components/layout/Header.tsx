@@ -25,7 +25,7 @@ export default function Header() {
         position={"fixed"}
         width={"100%"}
         zIndex={100}
-        backgroundColor={isMenuOpen ? "#FAFBFC" : "transparent"}
+        backgroundColor={isMenuOpen ? "#FAFBFC" : "rgba(250, 251, 252, 0.75)"}
       >
         {!isMenuOpen && <LogoComponent />}
         <MenuBarComponent

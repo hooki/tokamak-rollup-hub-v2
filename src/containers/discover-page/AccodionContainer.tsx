@@ -15,11 +15,16 @@ import {
   AccordionItemContent,
   AccordionRoot,
 } from "@/components/ui/accordion";
-import { useState } from "react";
 import SearchIcon from "@/assets/icon/search.svg";
 import Image from "next/image";
-export default function AccodionContainer() {
-  const [currentCategory, setCurrentCategory] = useState<string[]>(["all"]);
+import { ProductCategoryType } from "@/types/products";
+export default function AccodionContainer({
+  currentCategory,
+  setCurrentCategory,
+}: {
+  currentCategory: ProductCategoryType;
+  setCurrentCategory: (category: ProductCategoryType) => void;
+}) {
   return (
     <Stack direction={"column"} w={"219px"} gap={"15px"}>
       <Stack direction={"column"} w="100%" gap={"6px"}>
@@ -38,8 +43,10 @@ export default function AccodionContainer() {
           defaultValue={["all"]}
           cursor={"pointer"}
           w={"100%"}
-          value={currentCategory}
-          onValueChange={(e) => setCurrentCategory(e.value)}
+          value={[currentCategory]}
+          onValueChange={(e) =>
+            setCurrentCategory(e.value[0] as ProductCategoryType)
+          }
           collapsible
           spaceY={"6px"}
         >
