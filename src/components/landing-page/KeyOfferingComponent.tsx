@@ -9,13 +9,13 @@ export default function KeyOfferingComponent() {
   return (
     <Flex flexDir={"column"} gap={"45px"} justifyContent={"center"}>
       <Text
-        width={{ base: "100%", md: "679px" }}
+        width={"100%"}
         fontSize={{ base: "42px", md: "54px" }}
         fontWeight={700}
         lineHeight={"normal"}
         letterSpacing={"-1.62px"}
       >
-        Key Offerings of a Rollup Hub for Developers
+        Rollup Hub: Built for Developers
       </Text>
       <Flex
         gap={"45px"}

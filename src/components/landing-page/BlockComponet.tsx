@@ -1,7 +1,7 @@
 "use client";
 import { useBreakpoint } from "@/hooks/breakpoint";
 import { Flex, Text } from "@chakra-ui/react";
-import { BLOCK_LIST, BUILDING_BLOCKS_TEXT } from "@/consts/texts";
+import { BUILDING_BLOCKS_TEXT } from "@/consts/texts";
 import DotLogoImage from "@/assets/logo/dot-logo.svg";
 import Image from "next/image";
 export default function BlockComponent() {
@@ -32,14 +32,14 @@ export default function BlockComponent() {
             fontSize={{ base: "42px", sm: "60px" }}
             fontWeight={700}
             lineHeight={"66px"}
-            textAlign={{ base: "center", lg: "right" }}
+            textAlign={{ base: "center", lg: "justify" }}
             letterSpacing={"-1.8px"}
           >
             {BUILDING_BLOCKS_TEXT.title}
           </Text>
           <Text
             color={"#252525"}
-            textAlign={{ base: "center", lg: "right" }}
+            textAlign={{ base: "center", lg: "justify" }}
             fontSize={"16px"}
             fontWeight={400}
             lineHeight={"20px"}
@@ -48,26 +48,6 @@ export default function BlockComponent() {
           </Text>
         </Flex>
       </Flex>
-      {BLOCK_LIST.map((block) => (
-        <Flex key={block.title} flexDir={"column"} gap={"10px"}>
-          <Text
-            fontSize={{ base: "28px", sm: "40px" }}
-            fontWeight={700}
-            lineHeight={"normal"}
-            letterSpacing={"-1.2px"}
-          >
-            {block.title}
-          </Text>
-          <Text
-            color={"#252525"}
-            fontSize={"16px"}
-            fontWeight={400}
-            lineHeight={"20px"}
-          >
-            {block.description}
-          </Text>
-        </Flex>
-      ))}
     </Flex>
   );
 }

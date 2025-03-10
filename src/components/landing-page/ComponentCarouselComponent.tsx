@@ -1,11 +1,11 @@
 "use client";
-import { COMPONENT_LIST } from "@/consts/texts";
 import { Flex, Text } from "@chakra-ui/react";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import Carousel from "react-multi-carousel";
 import CardComponent from "./CardComponent";
 import "react-multi-carousel/lib/styles.css";
 import { useRef } from "react";
+import Link from "next/link";
 const responsive = {
   superLargeDesktop: {
     breakpoint: { max: 4000, min: 1920 },
@@ -31,6 +31,123 @@ const responsive = {
   },
 };
 
+const ThanosBridgeComponent = () => {
+  return (
+    <CardComponent
+      title={"Thanos Bridge"}
+      description={
+        <>
+          <Text as={"span"} fontWeight={700}>
+            Thanos Bridge
+          </Text>{" "}
+          allows users to transfer assets between your deployed chain and L1. It
+          supports a number of assets including TON, ETH, USDC and integrates
+          quickly for seamless usability.
+        </>
+      }
+      featured={true}
+    />
+  );
+};
+
+const BlockExplorerComponent = () => {
+  return (
+    <CardComponent
+      title={"Block Explorer"}
+      description={
+        <>
+          Easily deploy an explorer for your chain with our SDK and make it
+          accessible to your network’s users.
+        </>
+      }
+      featured={true}
+    />
+  );
+};
+
+const CrossTradeComponent = () => {
+  return (
+    <CardComponent
+      title={"Cross Trade (Coming Soon)"}
+      description={
+        <>
+          <Text as={"span"} fontWeight={700}>
+            Cross Trade
+          </Text>{" "}
+          enables fast, decentralized withdrawals between L2 and L1 chains, as
+          well as L2-L2 transfers. Learn more{" "}
+          <Link
+            href={
+              "https://ethresear.ch/t/canonical-cross-chain-swap-fast-and-decentralized-settlement-for-cross-chain-swap-using-canonical-native-l1-l2-messaging/21638/3"
+            }
+            target="_blank"
+          >
+            <Text as={"span"} fontWeight={500} textDecoration={"underline"}>
+              here
+            </Text>
+          </Link>
+        </>
+      }
+      featured={false}
+    />
+  );
+};
+
+const EarnTONComponent = () => {
+  return (
+    <CardComponent
+      title={"Earn TON as Reward (Coming Soon)"}
+      description={
+        <>
+          Register your chain as a{" "}
+          <Text as={"span"} fontWeight={700}>
+            DAO candidate
+          </Text>{" "}
+          in the Tokamak Network ecosystem to earn seigniorage rewards
+          proportional to the L2 growth. Learn more{" "}
+          <Link
+            href={
+              "https://github.com/tokamak-network/papers/blob/master/cryptoeconomics/tokamak-cryptoeconomics-en.md#222-ton-staking-v2"
+            }
+            target="_blank"
+          >
+            <Text as={"span"} fontWeight={500} textDecoration={"underline"}>
+              here
+            </Text>
+          </Link>
+        </>
+      }
+      featured={false}
+    />
+  );
+};
+
+const RandomNumberGenerationComponent = () => {
+  return (
+    <CardComponent
+      title={"Random Number Generation (Coming Soon)"}
+      description={
+        <>
+          <Text as={"span"} fontWeight={700}>
+            Random Number Generation
+          </Text>{" "}
+          Integrate random number generation into your chain with our RNG
+          project. Learn more{" "}
+          <Link
+            href={"https://github.com/tokamak-network/Randomness-Beacon"}
+            target="_blank"
+          >
+            <Text as={"span"} fontWeight={500} textDecoration={"underline"}>
+              here
+            </Text>
+          </Link>
+        </>
+      }
+      featured={false}
+    />
+  );
+};
+
 export default function ComponentCarouselComponent() {
   const carouselRef = useRef<Carousel>(null);
   return (
@@ -46,7 +163,7 @@ export default function ComponentCarouselComponent() {
           lineHeight={"normal"}
           letterSpacing={"-1.62px"}
         >
-          Building the Future
+          Key Integrations
         </Text>
         <Flex>
           <IoIosArrowBack
@@ -81,14 +198,11 @@ export default function ComponentCarouselComponent() {
         autoPlay={true}
         autoPlaySpeed={5000}
       >
-        {COMPONENT_LIST.map((component) => (
-          <CardComponent
-            key={component.title}
-            title={component.title}
-            description={component.description}
-            featured={component.featured}
-          />
-        ))}
+        <ThanosBridgeComponent />
+        <BlockExplorerComponent />
+        <EarnTONComponent />
+        <CrossTradeComponent />
+        <RandomNumberGenerationComponent />
       </Carousel>
     </Flex>
   );

@@ -24,37 +24,37 @@ export const BLOCK_LIST = [
 
 export const KEY_OFFERING_LIST = [
   {
-    title: "Effortless Appchain Deployment",
+    title: "Stack ",
     description:
-      "Skip the complexity of rollup deployment with Tokamak Rollup Hub. Developers/Operators can deploy their own appchains using our deployment SDK—no deep protocol expertise required. Also, benefit from easy-to-use tools and integrations, making appchain deployment seamless.",
+      "Customize your tech stack for performance, security, and cost. With expanding options and multi-chain compatibility, your deployment possibilities keep growing.",
   },
   {
-    title: "Earn Rewards as an L2 Operator",
+    title: "Deployment SDK",
     description:
-      "L2 operators can earn TON incentives (seigniorage) by registering their deployed appchain through our Staking v2.5 service. Read more.",
+      "Our Deployment SDK simplifies infrastructure setup, making chain deployment effortless. With an intuitive CLI, even entry-level developers can quickly launch a chain on their own infrastructure.",
   },
   {
-    title: "Modular Architecture",
+    title: "Modular Integration",
     description:
-      "Tokamak Rollup Hub supports modular components that let you tailor your rollup to your needs. Developers can publish their components on our L2 page (available soon), gaining visibility and fostering ecosystem-wide innovation.",
+      "Integrations is an ecosystem of modular components that extend the functionality of AppChain, providing tools and services based on an open architecture. You can freely integrate basic components like bridges, data availability (DA) modules, and explorers, as well as advanced features like cross-trade and many more.",
   },
 ];
 
 export const COMPONENT_LIST = [
   {
-    title: "Mini Bridge",
+    title: "Thanos Bridge",
     featured: true,
     description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+      "Thanos Bridge allows users to transfer assets between your deployed chain and L1. It supports a number of assets including TON, ETH, USDC and integrates quickly for seamless usability.",
   },
   {
-    title: "Seigniorage reward",
-    featured: false,
+    title: "Block Explorer",
+    featured: true,
     description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+      "Easily deploy an explorer for your chain with our SDK and make it accessible to your network’s users",
   },
   {
-    title: "Random Number Generation",
+    title: "Earn TON as Reward (Coming Soon)",
     featured: false,
     description:
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",

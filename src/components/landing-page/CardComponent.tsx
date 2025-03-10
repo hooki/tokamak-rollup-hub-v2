@@ -10,7 +10,7 @@ export default function CardComponent({
   featured,
 }: {
   title: string;
-  description: string;
+  description: React.ReactNode;
   featured: boolean;
 }) {
   const [isHovered, setIsHovered] = useState(false);
@@ -59,7 +59,7 @@ export default function CardComponent({
         fontWeight={"400"}
         lineHeight={"24px"}
         color={"#252525"}
-        minHeight={{ base: "288px", md: "96px" }}
+        minHeight={{ base: "100px", md: "96px" }}
         WebkitLineClamp={{ base: 12, md: 4 }}
         style={{
           display: "-webkit-box",
