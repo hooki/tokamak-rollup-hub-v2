@@ -1,6 +1,6 @@
 "use client";
 import { Box, Button, Flex, Text } from "@chakra-ui/react";
-import RightArrowIcon from "@/assets/icon/right-arrow.svg";
+import RightArrowIcon from "@/assets/icon/next-icon.svg";
 import Image from "next/image";
 import TrhCenterIcon from "@/assets/trh-center.svg";
 import { useBreakpoint } from "@/hooks/breakpoint";
