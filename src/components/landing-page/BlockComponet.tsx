@@ -1,5 +1,5 @@
 "use client";
-import { useBreakpoint } from "@/app/hooks/breakpoint";
+import { useBreakpoint } from "@/hooks/breakpoint";
 import { Flex, Text } from "@chakra-ui/react";
 import { BLOCK_LIST, BUILDING_BLOCKS_TEXT } from "@/consts/texts";
 import DotLogoImage from "@/assets/logo/dot-logo.svg";
