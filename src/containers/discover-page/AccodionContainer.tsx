@@ -27,7 +27,7 @@ const AccordionComponent = ({
   setCurrentItem: (item: string | null) => void;
 }) => {
   return (
-    <Stack direction={"column"} w="219px" gap={"6px"} zIndex={100}>
+    <Stack direction={"column"} w="219px" gap={"6px"} zIndex={110}>
       <Text
         display={"flex"}
         fontSize={"20px"}
@@ -148,7 +148,7 @@ const DropdownComponent = ({
   );
   return (
     <Flex
-      zIndex={100}
+      zIndex={110}
       flexDir={"column"}
       w={{ base: "100%", md: "219px" }}
       padding={"10px 15px"}
