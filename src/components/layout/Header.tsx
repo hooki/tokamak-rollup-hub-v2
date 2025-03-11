@@ -24,7 +24,7 @@ export default function Header() {
         alignItems={"center"}
         position={"fixed"}
         width={"100%"}
-        zIndex={100}
+        zIndex={200}
         backgroundColor={isMenuOpen ? "#FAFBFC" : "transparent"}
       >
         {!isMenuOpen && <LogoComponent />}

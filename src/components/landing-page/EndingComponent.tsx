@@ -1,7 +1,9 @@
 "use client";
 import { Button, Flex, Text } from "@chakra-ui/react";
+import { useRouter } from "next/navigation";
 
 export default function EndingComponent() {
+  const router = useRouter();
   return (
     <Flex flexDir={"column"} gap={"45px"} alignItems={"center"}>
       <Flex flexDir={"column"} gap={"15px"} alignItems={"center"}>
@@ -40,6 +42,9 @@ export default function EndingComponent() {
         fontSize={"14px"}
         fontWeight={600}
         lineHeight={"21px"}
+        onClick={() => {
+          router.push("/discover");
+        }}
       >
         Discover
       </Button>

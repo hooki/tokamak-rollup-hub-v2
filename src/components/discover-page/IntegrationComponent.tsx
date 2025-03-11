@@ -9,13 +9,15 @@ export const IntegrationComponent: React.FC<SubProductDetailType> = ({
   return (
     <Flex
       flexDirection={"column"}
-      gap={"20px"}
+      justifyContent={"space-between"}
       alignItems={"center"}
       width={"100%"}
       padding={"24px 20px"}
       borderRadius={"15px"}
       border={"1px solid #E1E8ED"}
       bgColor={"#FFF"}
+      height={"100%"}
+      minHeight={"320px"}
     >
       <Flex flexDirection={"column"} gap={"15px"} alignItems={"center"}>
         <Box

@@ -2,10 +2,10 @@
 
 import { MENUBAR_ITEMS } from "@/consts/menubar";
 import { Button, Flex, Text } from "@chakra-ui/react";
-import { redirect } from "next/navigation";
 import MenuIcon from "@/assets/icon/menu.svg";
 import CloseIcon from "@/assets/icon/close.svg";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 interface MenuBarComponentProps {
   isMenuOpen: boolean;
@@ -16,6 +16,7 @@ export default function MenuBarComponent({
   isMenuOpen,
   setIsMenuOpen,
 }: MenuBarComponentProps) {
+  const router = useRouter();
   return (
     <>
       <Button
@@ -52,7 +53,10 @@ export default function MenuBarComponent({
             lineHeight={"normal"}
             textAlign={"center"}
             cursor={"pointer"}
-            onClick={() => redirect(item.href)}
+            onClick={() => {
+              router.push(item.href);
+              setIsMenuOpen(false);
+            }}
             _hover={{ color: "#0070ED" }}
             zIndex={3000}
           >

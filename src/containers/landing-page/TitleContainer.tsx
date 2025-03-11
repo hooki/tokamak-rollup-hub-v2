@@ -4,9 +4,11 @@ import RightArrowIcon from "@/assets/icon/next-icon.svg";
 import Image from "next/image";
 import TrhCenterIcon from "@/assets/trh-center.svg";
 import { useBreakpoint } from "@/hooks/breakpoint";
+import { useRouter } from "next/navigation";
 export default function TitleContainer() {
   const { isMobile, isTablet } = useBreakpoint();
   const imageWidth = isMobile ? 75 : isTablet ? 125 : 200;
+  const router = useRouter();
   return (
     <Flex
       width={"100%"}
@@ -112,6 +114,9 @@ export default function TitleContainer() {
             justifyContent={"center"}
             alignItems={"center"}
             _hover={{ background: "#0070ED" }}
+            onClick={() => {
+              router.push("/discover");
+            }}
           >
             <Flex gap={"6px"} alignItems={"center"} justifyContent={"center"}>
               <Text

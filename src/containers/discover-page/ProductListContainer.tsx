@@ -11,36 +11,45 @@ import {
 } from "@/components/ui/pagination";
 import { useEffect, useState } from "react";
 import { SubProductDetailType } from "@/types/products";
+import { useBreakpoint } from "@/hooks/breakpoint";
 export const ProductListContainer: React.FC<{
   category: "all" | "stack" | "integration";
-}> = ({ category }) => {
+  item: string | null;
+}> = ({ category, item }) => {
   const [integrationsToShow, setIntegrationsToShow] = useState<
     SubProductDetailType[]
   >([]);
+  const { isMobile } = useBreakpoint();
   const [stacksToShow, setStacksToShow] = useState<SubProductDetailType[]>([]);
   const [currentIntegrationPage, setCurrentIntegrationPage] = useState(1);
   const [currentStackPage, setCurrentStackPage] = useState(1);
 
   const integrations = SUB_PRODUCT_CATEGORIES["integration"];
   const stacks = SUB_PRODUCT_CATEGORIES["stack"];
-  const integrationCountPerPage = category === "all" ? 6 : 9;
+  const integrationCountPerPage = isMobile ? 6 : category === "all" ? 6 : 9;
   const stackCountPerPage = category === "all" ? 2 : 6;
   useEffect(() => {
+    const filteredIntegrations = item
+      ? integrations.filter((integration) => integration.id === item)
+      : integrations;
     setIntegrationsToShow(
-      integrations.slice(
+      filteredIntegrations.slice(
         (currentIntegrationPage - 1) * integrationCountPerPage,
         currentIntegrationPage * integrationCountPerPage
       )
     );
-  }, [currentIntegrationPage]);
+  }, [item, currentIntegrationPage]);
   useEffect(() => {
+    const filteredStacks = item
+      ? stacks.filter((stack) => stack.id === item)
+      : stacks;
     setStacksToShow(
-      stacks.slice(
+      filteredStacks.slice(
         (currentStackPage - 1) * stackCountPerPage,
         currentStackPage * stackCountPerPage
       )
     );
-  }, [currentStackPage]);
+  }, [item, currentStackPage]);
   return (
     <Flex
       width={"100%"}
@@ -51,21 +60,23 @@ export const ProductListContainer: React.FC<{
       <Flex flexDir={"column"} gap={"120px"}>
         {(category === "all" || category === "stack") && (
           <Flex flexDir={"column"} gap={"39px"} alignItems={"center"}>
-            <StackListComponent stacks={stacksToShow} />
-            <PaginationRoot
-              count={stacks.length}
-              pageSize={stackCountPerPage}
-              defaultPage={1}
-              onPageChange={(page) => {
-                setCurrentStackPage(page.page);
-              }}
-            >
-              <HStack>
-                <PaginationPrevTrigger />
-                <PaginationItems />
-                <PaginationNextTrigger />
-              </HStack>
-            </PaginationRoot>
+            <StackListComponent category={category} stacks={stacksToShow} />
+            {category === "stack" && (
+              <PaginationRoot
+                count={stacks.length}
+                pageSize={stackCountPerPage}
+                defaultPage={1}
+                onPageChange={(page) => {
+                  setCurrentStackPage(page.page);
+                }}
+              >
+                <HStack>
+                  <PaginationPrevTrigger />
+                  <PaginationItems />
+                  <PaginationNextTrigger />
+                </HStack>
+              </PaginationRoot>
+            )}
           </Flex>
         )}
         {(category === "all" || category === "integration") && (

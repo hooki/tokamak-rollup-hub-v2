@@ -34,7 +34,7 @@ export const StackComponent: React.FC<SubProductDetailType> = ({
       </Text>
       <Text
         overflow={"hidden"}
-        fontSize={"24px"}
+        fontSize={{ base: "21px", md: "24px" }}
         fontWeight={700}
         lineHeight={"normal"}
         whiteSpace={"nowrap"}

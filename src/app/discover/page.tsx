@@ -3,27 +3,49 @@ import AccodionContainer from "@/containers/discover-page/AccodionContainer";
 import { ProductListContainer } from "@/containers/discover-page/ProductListContainer";
 import { Box, Flex, Stack, Text } from "@chakra-ui/react";
 import { useState } from "react";
+
 export default function Discover() {
   const [currentCategory, setCurrentCategory] = useState<
     "all" | "stack" | "integration"
   >("all");
+  const [currentItem, setCurrentItem] = useState<string | null>(null);
   return (
     <Box
       className="discover-page"
       w={"100%"}
-      mt={"78px"}
+      pt={"78px"}
       mb={"30px"}
-      px={"360px"}
-      bgColor={"#FAFBFC"}
+      px={{ base: "30px", lg: "40px", "2xl": "360px" }}
       minH={`calc(100vh - ${95}px)`}
+      bgColor={"#FAFBFC"}
     >
-      <Flex flexDir={"column"} pt={"120px"} pb="90px" gap={"120px"}>
+      <Flex
+        position={"absolute"}
+        top={0}
+        left={0}
+        w={"100%"}
+        h={"100vh"}
+        zIndex={1}
+        bg={"url(/images/discover-bg.png) no-repeat center center"}
+        bgSize={"cover"}
+      ></Flex>
+      <Flex
+        flexDir={"column"}
+        pt={"120px"}
+        pb="90px"
+        gap={{ base: "60px", md: "120px" }}
+      >
         <Flex flexDir={"column"} gap={"15px"}>
           <Text
-            fontSize={"70px"}
+            fontSize={{ base: "30px", md: "54px", lg: "70px" }}
             fontWeight={700}
-            lineHeight={"75px"}
-            letterSpacing={"-2.1px"}
+            lineHeight={{ base: "36px", md: "60px", lg: "75px" }}
+            letterSpacing={{
+              base: "-0.9px",
+              md: "-1.62px",
+              lg: "-2.1px",
+              "2xl": "-2.8px",
+            }}
             maxW={"897px"}
           >
             Explore Limitless Possibilities, Contribute Seamlessly
@@ -32,12 +54,17 @@ export default function Discover() {
             Browse through all the things you want to find.
           </Text>
         </Flex>
-        <Stack direction={"row"} gap={"45px"}>
+        <Stack
+          direction={{ base: "column", lg: "row" }}
+          gap={{ base: "83px", lg: "45px" }}
+        >
           <AccodionContainer
             currentCategory={currentCategory}
             setCurrentCategory={setCurrentCategory}
+            currentItem={currentItem}
+            setCurrentItem={setCurrentItem}
           />
-          <ProductListContainer category={currentCategory} />
+          <ProductListContainer category={currentCategory} item={currentItem} />
         </Stack>
       </Flex>
     </Box>
