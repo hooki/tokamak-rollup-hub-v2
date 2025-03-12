@@ -110,13 +110,22 @@ export default function ThanosBridgePage() {
                   borderRadius={"35px"}
                   border={"1px solid #E1E8ED"}
                 />
-                <Text
-                  fontSize={"36px"}
-                  fontWeight={700}
-                  letterSpacing={"-1.08px"}
-                >
-                  Thanos Bridge
-                </Text>
+                <Flex gap={"12px"} alignItems={"center"}>
+                  <Text
+                    fontSize={"36px"}
+                    fontWeight={700}
+                    letterSpacing={"-1.08px"}
+                  >
+                    Thanos Bridge
+                  </Text>
+                  <Text
+                    fontSize={"14px"}
+                    fontWeight={400}
+                    lineHeight={"normal"}
+                  >
+                    Bridge
+                  </Text>
+                </Flex>
               </Flex>
               <Flex
                 ml={{ base: "0px", md: "60px" }}
