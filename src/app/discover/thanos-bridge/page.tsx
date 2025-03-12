@@ -14,6 +14,7 @@ const BackButton = () => {
       alignItems={"center"}
       cursor={"pointer"}
       onClick={() => router.back()}
+      zIndex={100}
     >
       <Image src={backIcon} alt="back" />
       <Text
