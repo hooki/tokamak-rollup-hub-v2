@@ -1,11 +1,15 @@
+"use client";
 import { SubProductDetailType } from "@/types/products";
 import { Box, Button, Flex, Text } from "@chakra-ui/react";
+import { useRouter } from "next/navigation";
 
 export const IntegrationComponent: React.FC<SubProductDetailType> = ({
   name,
   description,
   category,
+  link,
 }) => {
+  const router = useRouter();
   return (
     <Flex
       flexDirection={"column"}
@@ -73,6 +77,7 @@ export const IntegrationComponent: React.FC<SubProductDetailType> = ({
         }}
         cursor={"pointer"}
         fontFamily={"Proxima Nova"}
+        onClick={() => router.push(link || "")}
       >
         Find more
       </Button>

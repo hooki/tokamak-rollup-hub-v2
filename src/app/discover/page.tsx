@@ -2,12 +2,15 @@
 import AccodionContainer from "@/containers/discover-page/AccodionContainer";
 import { ProductListContainer } from "@/containers/discover-page/ProductListContainer";
 import { Box, Flex, Stack, Text } from "@chakra-ui/react";
+import { useSearchParams } from "next/navigation";
 import { useState } from "react";
 
 export default function Discover() {
+  const searchParams = useSearchParams();
   const [currentCategory, setCurrentCategory] = useState<
     "all" | "stack" | "integration"
-  >("all");
+  >((searchParams.get("category") as "all" | "stack" | "integration") || "all");
+
   const [currentItem, setCurrentItem] = useState<string | null>(null);
   return (
     <Box

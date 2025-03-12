@@ -44,7 +44,7 @@ export const SUB_PRODUCT_CATEGORIES: Record<string, SubProductDetailType[]> = {
       name: "Block Explorer",
       description:
         "A tool for exploring and searching the L2 networks for transactions, blocks, and other network activity.",
-      link: "https://github.com/thanos-labs/thanos",
+      link: "/discover/block-explorer",
       category: "integration",
     },
     {
@@ -52,7 +52,7 @@ export const SUB_PRODUCT_CATEGORIES: Record<string, SubProductDetailType[]> = {
       name: "Thanos Bridge",
       description:
         "Thanos Bridge allows users to transfer assets between your deployed chain and L1. It supports a number of assets including TON, ETH, USDC and integrates quickly for seamless usability.",
-      link: "https://github.com/thanos-labs/thanos",
+      link: "/discover/thanos-bridge",
       category: "integration",
     },
     // {
