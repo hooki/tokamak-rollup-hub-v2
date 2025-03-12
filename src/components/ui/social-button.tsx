@@ -60,7 +60,7 @@ export const SocialButton: React.FC<SocialButtonProps> = ({
   const [isHovered, setIsHovered] = useState(false);
   return (
     <Button
-      padding={"9px 15px"}
+      padding={{ base: "9px 9px", md: "9px 15px" }}
       display={"flex"}
       justifyContent={"center"}
       alignItems={"center"}
@@ -88,6 +88,7 @@ export const SocialButton: React.FC<SocialButtonProps> = ({
         fontWeight={600}
         color={isHovered ? "#FFF" : "#1C1C1C"}
         fontFamily={"Proxima Nova"}
+        display={{ base: "none", md: "flex" }}
       >
         {label}
       </Text>

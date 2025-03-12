@@ -71,18 +71,29 @@ export default function ThanosBridgePage() {
       minH={`calc(100vh - ${95}px)`}
       bgColor={"#FAFBFC"}
     >
+      <Flex
+        position={"absolute"}
+        top={0}
+        left={0}
+        w={"100%"}
+        h={"100vh"}
+        zIndex={1}
+        bg={"url(/images/discover-bg.png) no-repeat center center"}
+        bgSize={"cover"}
+      ></Flex>
       <BackButton />
       <Flex
         gap={"30px"}
         flexDir={{ base: "column", md: "row" }}
         alignItems={"flex-start"}
+        zIndex={100}
       >
         <Flex
           flexDir={"column"}
           width={{ base: "100%", md: "75%" }}
           borderRadius={"15px"}
           border={"1px solid #E1E8ED"}
-          bgColor={"FFF"}
+          bgColor={"#FFF"}
           padding={{ base: "21px 21px 30px 21px", md: "45px 30px 60px 30px" }}
           gap={{ base: "60px", md: "75px" }}
           alignItems={"flex-start"}
