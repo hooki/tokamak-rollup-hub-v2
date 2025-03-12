@@ -1,8 +1,5 @@
 "use client";
-import {
-  PRODUCT_CATEGORIES,
-  SUB_PRODUCT_CATEGORIES,
-} from "@/consts/components";
+import { PRODUCT_CATEGORIES, SUB_CATEGORY_MAP } from "@/consts/components";
 import { AccordionItemTrigger, Flex, Stack, Text } from "@chakra-ui/react";
 import {
   AccordionItem,
@@ -94,12 +91,12 @@ const AccordionComponent = ({
                 direction={"column"}
                 w={"100%"}
                 gap={"6px"}
-                mt={SUB_PRODUCT_CATEGORIES[item.id].length > 0 ? "6px" : "0px"}
+                mt={SUB_CATEGORY_MAP[item.id].length > 0 ? "6px" : "0px"}
               >
-                {SUB_PRODUCT_CATEGORIES[item.id].map((subItem) => (
+                {SUB_CATEGORY_MAP[item.id].map((subItem) => (
                   <Text
                     pl={"45px"}
-                    key={subItem.id}
+                    key={subItem}
                     h={"36px"}
                     w={"100%"}
                     display={"flex"}
@@ -109,17 +106,17 @@ const AccordionComponent = ({
                     fontWeight={500}
                     lineHeight={"normal"}
                     letterSpacing={"-0.4px"}
-                    bg={currentItem === subItem.id ? "#1C1C1C" : "transparent"}
-                    color={currentItem === subItem.id ? "#FFF" : "#1C1C1C"}
+                    bg={currentItem === subItem ? "#1C1C1C" : "transparent"}
+                    color={currentItem === subItem ? "#FFF" : "#1C1C1C"}
                     _hover={{
                       bg: "#1C1C1C",
                       color: "#FFF",
                     }}
                     onClick={() => {
-                      setCurrentItem(subItem.id);
+                      setCurrentItem(subItem);
                     }}
                   >
-                    {subItem.name}
+                    {subItem}
                   </Text>
                 ))}
               </Stack>
@@ -223,32 +220,32 @@ const DropdownComponent = ({
             >
               {item.name}
             </Text>
-            {SUB_PRODUCT_CATEGORIES[item.id].map((subItem) => (
+            {SUB_CATEGORY_MAP[item.id].map((subItem) => (
               <Text
                 width={"100%"}
                 display={"flex"}
                 alignItems={"center"}
                 h={"36px"}
                 pl={"45px"}
-                key={subItem.id}
+                key={subItem}
                 fontSize={"16px"}
                 fontWeight={500}
                 letterSpacing={"-0.49px"}
                 borderRadius={"6px"}
-                bgColor={currentItem === subItem.id ? "#1C1C1C" : "transparent"}
-                color={currentItem === subItem.id ? "#FFF" : "#1C1C1C"}
+                bgColor={currentItem === subItem ? "#1C1C1C" : "transparent"}
+                color={currentItem === subItem ? "#FFF" : "#1C1C1C"}
                 _hover={{
                   bg: "#1C1C1C",
                   color: "#FFF",
                 }}
                 onClick={() => {
-                  setCurrentItem(subItem.id);
+                  setCurrentItem(subItem);
                   setCurrentCategory(item.id as ProductCategoryType);
-                  setActiveCategory(subItem.name);
+                  setActiveCategory(subItem);
                   setIsOpen(false);
                 }}
               >
-                {subItem.name}
+                {subItem}
               </Text>
             ))}
           </Flex>

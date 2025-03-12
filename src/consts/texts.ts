@@ -36,7 +36,7 @@ export const KEY_OFFERING_LIST = [
   {
     title: "Modular Integration",
     description:
-      "Integrations is an ecosystem of modular components that extend the functionality of AppChain, providing tools and services based on an open architecture. You can freely integrate basic components like bridges, data availability (DA) modules, and explorers, as well as advanced features like cross-trade and many more.",
+      "Integrations is an ecosystem of modular components that extend the functionality of AppChain, providing tools and services based on an open architecture.",
   },
 ];
 

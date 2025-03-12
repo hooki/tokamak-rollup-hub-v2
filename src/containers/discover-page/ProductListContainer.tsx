@@ -30,7 +30,7 @@ export const ProductListContainer: React.FC<{
   const stackCountPerPage = category === "all" ? 2 : 6;
   useEffect(() => {
     const filteredIntegrations = item
-      ? integrations.filter((integration) => integration.id === item)
+      ? integrations.filter((integration) => integration.subCategory === item)
       : integrations;
     setIntegrationsToShow(
       filteredIntegrations.slice(
@@ -41,7 +41,7 @@ export const ProductListContainer: React.FC<{
   }, [item, currentIntegrationPage]);
   useEffect(() => {
     const filteredStacks = item
-      ? stacks.filter((stack) => stack.id === item)
+      ? stacks.filter((stack) => stack.subCategory === item)
       : stacks;
     setStacksToShow(
       filteredStacks.slice(

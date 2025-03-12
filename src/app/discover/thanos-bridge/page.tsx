@@ -169,7 +169,7 @@ export default function ThanosBridgePage() {
               >
                 Overview
               </Text>
-              <Text fontSize={"14px"} fontWeight={400} lineHeight={"18px"}>
+              <Text fontSize={"15px"} fontWeight={400} lineHeight={"18px"}>
                 The thanos bridge can be configured and integrated into the
                 deployed Thanos stacks. Its key functionality includes
                 Deposit/Withdraw support for ETH or the native token. It is
@@ -197,7 +197,7 @@ export default function ThanosBridgePage() {
               >
                 Deployment Guide
               </Text>
-              <Text fontSize={"14px"} fontWeight={400} lineHeight={"18px"}>
+              <Text fontSize={"15px"} fontWeight={400} lineHeight={"18px"}>
                 The thanos bridge can be deployed in two ways: automatically
                 through the SDK during the thanos stack deployment, or manually.
                 The automatic deployment process ensures a seamless integration
@@ -225,7 +225,7 @@ export default function ThanosBridgePage() {
               >
                 How to Contribute this Stack
               </Text>
-              <Text fontSize={"14px"} fontWeight={400} lineHeight={"18px"}>
+              <Text fontSize={"15px"} fontWeight={400} lineHeight={"18px"}>
                 The thanos bridge is open source, and operators and developers
                 can extend its functionalities to suit their specific needs. If
                 you want to contribute to the thanos bridge, please feel free to
@@ -256,7 +256,7 @@ export default function ThanosBridgePage() {
               Hightlights
             </Text>
             <List.Root ml={"15px"}>
-              <List.Item fontSize={"13px"} fontWeight={700} lineHeight={"17px"}>
+              <List.Item fontSize={"14px"} fontWeight={700} lineHeight={"17px"}>
                 Lightweight
                 <Text
                   as={"span"}
@@ -267,7 +267,7 @@ export default function ThanosBridgePage() {
                   - No reliance on any third-party backends
                 </Text>
               </List.Item>
-              <List.Item fontSize={"13px"} fontWeight={700} lineHeight={"17px"}>
+              <List.Item fontSize={"14px"} fontWeight={700} lineHeight={"17px"}>
                 Open Source
                 <Text
                   as={"span"}
@@ -279,7 +279,7 @@ export default function ThanosBridgePage() {
                   functionalities
                 </Text>
               </List.Item>
-              <List.Item fontSize={"13px"} fontWeight={700} lineHeight={"17px"}>
+              <List.Item fontSize={"14px"} fontWeight={700} lineHeight={"17px"}>
                 Ease of use
                 <Text
                   as={"span"}
@@ -297,7 +297,7 @@ export default function ThanosBridgePage() {
             <Text fontSize={"15px"} fontWeight={700} letterSpacing={"-0.45px"}>
               Deployment Cost
             </Text>
-            <Text fontSize={"13px"} fontWeight={400} lineHeight={"17px"}>
+            <Text fontSize={"14px"} fontWeight={400} lineHeight={"17px"}>
               The deployment cost of the thanos bridge is included in the thanos
               stack deployment. One thing to note is that it doesn&apos;t
               require any contract deployment.

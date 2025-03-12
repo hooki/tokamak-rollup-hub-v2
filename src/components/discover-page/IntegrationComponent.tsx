@@ -6,8 +6,8 @@ import { useRouter } from "next/navigation";
 export const IntegrationComponent: React.FC<SubProductDetailType> = ({
   name,
   description,
-  category,
   link,
+  subCategory,
 }) => {
   const router = useRouter();
   return (
@@ -43,11 +43,11 @@ export const IntegrationComponent: React.FC<SubProductDetailType> = ({
           </Text>
           <Text
             fontSize={"12px"}
-            fontWeight={400}
+            fontWeight={500}
             lineHeight={"20px"}
             color={"#252525"}
           >
-            {category}
+            {subCategory}
           </Text>
         </Flex>
       </Flex>
@@ -57,6 +57,12 @@ export const IntegrationComponent: React.FC<SubProductDetailType> = ({
         lineHeight={"24px"}
         textAlign={"center"}
         color={"#252525"}
+        style={{
+          display: "-webkit-box",
+          WebkitBoxOrient: "vertical",
+          overflow: "hidden",
+        }}
+        WebkitLineClamp={4}
       >
         {description}
       </Text>

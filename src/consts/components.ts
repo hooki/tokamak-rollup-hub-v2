@@ -18,16 +18,23 @@ export const PRODUCT_CATEGORIES: ProductDetailType[] = [
   },
 ];
 
+export const SUB_CATEGORY_MAP: Record<string, string[]> = {
+  all: [],
+  stack: [],
+  integration: ["Block Explorer", "Bridge"],
+};
+
 export const SUB_PRODUCT_CATEGORIES: Record<string, SubProductDetailType[]> = {
   all: [],
   stack: [
     {
       id: "thanos-stack",
-      name: "Thanos Stack",
+      name: "Thanos",
       description:
         "A customized fork of the OP Stack that enables ERC20 tokens as the native currency for the L2 chain.",
       link: "https://github.com/thanos-labs/thanos",
       category: "stack",
+      subCategory: "OP",
     },
     // {
     //   id: "zk-stack",
@@ -41,19 +48,21 @@ export const SUB_PRODUCT_CATEGORIES: Record<string, SubProductDetailType[]> = {
   integration: [
     {
       id: "block-explorer",
-      name: "Block Explorer",
+      name: "Thanos Explorer",
       description:
-        "A tool for exploring and searching the L2 networks for transactions, blocks, and other network activity.",
+        "A tool for exploring and searching the Thanos networks for transactions, blocks, and other network activity.",
       link: "/discover/block-explorer",
       category: "integration",
+      subCategory: "Block Explorer",
     },
     {
       id: "thanos-bridge",
       name: "Thanos Bridge",
       description:
-        "Thanos Bridge allows users to transfer assets between your deployed chain and L1. It supports a number of assets including TON, ETH, USDC and integrates quickly for seamless usability.",
+        "Thanos Bridge allows users to transfer assets between your deployed Thanos stack and L1. It supports a number of assets including TON, ETH, USDC and integrates quickly for seamless usability.",
       link: "/discover/thanos-bridge",
       category: "integration",
+      subCategory: "Bridge",
     },
     // {
     //   id: "earn-ton-as-reward",

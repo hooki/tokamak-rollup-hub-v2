@@ -4,6 +4,7 @@ export interface SubProductDetailType {
   description: string;
   link?: string;
   category: string;
+  subCategory?: string;
   image?: string;
 }
 

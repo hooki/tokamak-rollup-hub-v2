@@ -4,7 +4,6 @@ import Image from "next/image";
 import router from "next/router";
 
 export const StackComponent: React.FC<SubProductDetailType> = ({
-  category,
   name,
   description,
   image,
@@ -29,9 +28,6 @@ export const StackComponent: React.FC<SubProductDetailType> = ({
           height={150}
         />
       </Box>
-      <Text fontSize={"13px"} fontWeight={600} lineHeight={"normal"}>
-        {category}
-      </Text>
       <Text
         overflow={"hidden"}
         fontSize={{ base: "21px", md: "24px" }}

@@ -28,6 +28,7 @@ export default function CardComponent({
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       cursor={"pointer"}
+      minH={"270px"}
     >
       <Flex gap={"15px"} alignItems={"center"}>
         <Image src={ComponentIcon} alt="component" />
