@@ -32,7 +32,7 @@ export const SUB_PRODUCT_CATEGORIES: Record<string, SubProductDetailType[]> = {
       name: "Thanos",
       description:
         "A customized fork of the OP Stack that enables ERC20 tokens as the native currency for the L2 chain.",
-      link: "https://github.com/thanos-labs/thanos",
+      link: "/discover/thanos-stack",
       category: "stack",
       subCategory: "OP",
     },

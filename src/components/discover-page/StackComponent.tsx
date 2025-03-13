@@ -1,7 +1,8 @@
+"use client";
 import { SubProductDetailType } from "@/types/products";
 import { Box, Flex, Text } from "@chakra-ui/react";
 import Image from "next/image";
-import router from "next/router";
+import { useRouter } from "next/navigation";
 
 export const StackComponent: React.FC<SubProductDetailType> = ({
   name,
@@ -9,6 +10,7 @@ export const StackComponent: React.FC<SubProductDetailType> = ({
   image,
   link,
 }) => {
+  const router = useRouter();
   return (
     <Flex flexDir={"column"} gap={"12px"} width={"100%"}>
       <Box
