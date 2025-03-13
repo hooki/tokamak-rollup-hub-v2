@@ -51,7 +51,7 @@ export const SUB_PRODUCT_CATEGORIES: Record<string, SubProductDetailType[]> = {
       name: "Thanos Explorer",
       description:
         "A tool for exploring and searching the Thanos networks for transactions, blocks, and other network activity.",
-      link: "/discover/block-explorer",
+      link: "/discover/thanos-explorer",
       category: "integration",
       subCategory: "Block Explorer",
     },
