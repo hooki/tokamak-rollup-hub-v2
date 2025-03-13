@@ -1,5 +1,5 @@
 "use client";
-import { Box, Flex } from "@chakra-ui/react";
+import { Flex } from "@chakra-ui/react";
 import LogoComponent from "./LogoComponent";
 import MenuBarComponent from "./MenuBarComponent";
 import { useEffect, useState } from "react";
@@ -15,6 +15,16 @@ export default function Header() {
     }
   }, [isMenuOpen]);
 
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <>
       <Flex
@@ -24,8 +34,14 @@ export default function Header() {
         alignItems={"center"}
         position={"fixed"}
         width={"100%"}
-        zIndex={200}
-        backgroundColor={isMenuOpen ? "#FAFBFC" : "transparent"}
+        zIndex={1000}
+        backgroundColor={
+          isMenuOpen
+            ? "#FAFBFC"
+            : isScrolled
+            ? "rgba(250, 251, 252, 0.75)"
+            : "transparent"
+        }
       >
         {!isMenuOpen && <LogoComponent />}
         <MenuBarComponent
@@ -33,13 +49,6 @@ export default function Header() {
           setIsMenuOpen={setIsMenuOpen}
         />
       </Flex>
-      <Box
-        h={isMenuOpen ? "100vh" : "78px"}
-        position={"fixed"}
-        width={"100%"}
-        bgColor={isMenuOpen ? "white" : "rgba(250, 251, 252, 0.75)"}
-        zIndex={1}
-      />
     </>
   );
 }
