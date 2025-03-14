@@ -22,7 +22,7 @@ export default function Discover() {
       minH={`calc(100vh - ${95}px)`}
       bgColor={"#FAFBFC"}
     >
-      <Box maxW={"1440px"} mx={"auto"} width={"100%"}>
+      <Box maxW={"1200px"} mx={"auto"} width={"100%"}>
         <Flex
           position={"absolute"}
           top={0}
