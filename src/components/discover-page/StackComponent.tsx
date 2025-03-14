@@ -49,7 +49,7 @@ export const StackComponent: React.FC<SubProductDetailType> = ({
           WebkitBoxOrient: "vertical",
           overflow: "hidden",
         }}
-        WebkitLineClamp={3}
+        WebkitLineClamp={2}
       >
         {description}
       </Text>
