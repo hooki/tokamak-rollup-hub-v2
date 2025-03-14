@@ -7,16 +7,22 @@ import { Flex } from "@chakra-ui/react";
 export default function DetailContainer() {
   return (
     <Flex
-      px={{ base: "19px", md: "30px", lg: "120px", "2xl": "240px" }}
+      px={{ base: "19px", md: "30px", lg: "88px" }}
       py={"90px"}
-      flexDir={"column"}
-      gap={"150px"}
       width={"100%"}
     >
-      <BlockComponent />
-      <KeyOfferingComponent />
-      <ComponentCarouselComponent />
-      <EndingComponent />
+      <Flex
+        flexDir={"column"}
+        gap={"150px"}
+        maxW={"1440px"}
+        mx={"auto"}
+        width={"100%"}
+      >
+        <BlockComponent />
+        <KeyOfferingComponent />
+        <ComponentCarouselComponent />
+        <EndingComponent />
+      </Flex>
     </Flex>
   );
 }
