@@ -8,7 +8,13 @@ export const StackListComponent: React.FC<{
   stacks: SubProductDetailType[];
 }> = ({ stacks }) => {
   return (
-    <Flex flexDir={"column"} gap={"39px"} zIndex={100}>
+    <Flex
+      flexDir={"column"}
+      gap={"39px"}
+      zIndex={100}
+      className="stack-list"
+      width={"100%"}
+    >
       <Flex flexDir={"column"} gap={"10px"}>
         <Text
           fontSize={"30px"}

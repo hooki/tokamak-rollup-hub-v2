@@ -57,9 +57,14 @@ export const ProductListContainer: React.FC<{
       gap={"39px"}
       alignItems={"center"}
     >
-      <Flex flexDir={"column"} gap={"120px"}>
+      <Flex flexDir={"column"} gap={"120px"} width={"100%"}>
         {(category === "all" || category === "stack") && (
-          <Flex flexDir={"column"} gap={"39px"} alignItems={"center"}>
+          <Flex
+            flexDir={"column"}
+            gap={"39px"}
+            alignItems={"center"}
+            width={"100%"}
+          >
             <StackListComponent category={category} stacks={stacksToShow} />
             {category === "stack" && (
               <PaginationRoot
