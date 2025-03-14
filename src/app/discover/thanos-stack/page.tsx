@@ -5,17 +5,20 @@ import backIcon from "@/assets/icon/back.svg";
 import Image from "next/image";
 import { SocialButton } from "@/components/ui/social-button";
 import { IntegrationLogo } from "@/components/ui/integration-logo";
-
+import { useState } from "react";
 const BackButton = () => {
   const router = useRouter();
+  const [isHover, setIsHover] = useState(false);
   return (
     <Flex
       gap={"12px"}
       ml={"30px"}
       alignItems={"center"}
       cursor={"pointer"}
-      onClick={() => router.back()}
+      onClick={() => router.push("/discover?category=stack")}
       zIndex={100}
+      onMouseEnter={() => setIsHover(true)}
+      onMouseLeave={() => setIsHover(false)}
     >
       <Image src={backIcon} alt="back" />
       <Text
@@ -23,8 +26,7 @@ const BackButton = () => {
         fontWeight={700}
         letterSpacing={"-0.54px"}
         cursor={"pointer"}
-        _hover={{ textDecoration: "underline" }}
-        onClick={() => router.push("/discover?category=stack")}
+        textDecoration={isHover ? "underline" : "none"}
       >
         Back
       </Text>

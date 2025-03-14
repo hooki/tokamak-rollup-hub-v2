@@ -98,3 +98,9 @@ export const SUB_PRODUCT_CATEGORIES: Record<string, SubProductDetailType[]> = {
     // },
   ],
 };
+
+export const CategoryNameMap: Record<string, string> = {
+  all: "View all",
+  stack: "Stack",
+  integration: "Integration",
+};

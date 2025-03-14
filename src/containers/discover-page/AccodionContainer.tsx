@@ -1,10 +1,14 @@
 "use client";
-import { PRODUCT_CATEGORIES, SUB_CATEGORY_MAP } from "@/consts/components";
+import {
+  PRODUCT_CATEGORIES,
+  SUB_CATEGORY_MAP,
+  CategoryNameMap,
+} from "@/consts/components";
 import { Flex, Stack, Text } from "@chakra-ui/react";
 import Image from "next/image";
 import { ProductCategoryType } from "@/types/products";
 import DropdownIcon from "@/assets/icon/dropdown.svg";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useBreakpoint } from "@/hooks/breakpoint";
 
 const AccordionComponent = ({
@@ -121,8 +125,17 @@ const DropdownComponent = ({
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeCategory, setActiveCategory] = useState<string>(
-    "Categories - View all"
+    currentCategory === "all" ? "Categories - View all" : currentCategory
   );
+  useEffect(() => {
+    setActiveCategory(
+      currentCategory === "all"
+        ? "Categories - View all"
+        : currentItem
+        ? currentItem
+        : CategoryNameMap[currentCategory]
+    );
+  }, [currentCategory, currentItem]);
   return (
     <Flex
       zIndex={110}
