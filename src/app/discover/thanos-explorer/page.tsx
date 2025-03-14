@@ -4,6 +4,7 @@ import { useRouter } from "next/navigation";
 import backIcon from "@/assets/icon/back.svg";
 import Image from "next/image";
 import { SocialButton } from "@/components/ui/social-button";
+import { IntegrationLogo } from "@/components/ui/integration-logo";
 
 const BackButton = () => {
   const router = useRouter();
@@ -102,12 +103,10 @@ export default function ThanosExplorerPage() {
               <RouteComponent />
               <Flex flexDir={"column"} gap={"18px"}>
                 <Flex alignItems={"center"} gap={"15px"}>
-                  <Box
-                    width={"45px"}
-                    height={"45px"}
-                    bgColor={"#FFF"}
-                    borderRadius={"35px"}
-                    border={"1px solid #E1E8ED"}
+                  <IntegrationLogo
+                    name={"thanos-explorer"}
+                    width={45}
+                    height={45}
                   />
                   <Flex
                     gap={{ base: "6px", md: "12px" }}
@@ -115,14 +114,14 @@ export default function ThanosExplorerPage() {
                     flexDir={{ base: "column", md: "row" }}
                   >
                     <Text
-                      fontSize={"36px"}
+                      fontSize={{ base: "21px", md: "36px" }}
                       fontWeight={700}
                       letterSpacing={"-1.08px"}
                     >
                       Thanos Explorer
                     </Text>
                     <Text
-                      fontSize={"14px"}
+                      fontSize={{ base: "13px", md: "14px" }}
                       fontWeight={400}
                       lineHeight={"normal"}
                     >

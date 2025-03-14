@@ -17,7 +17,6 @@ export default function Discover() {
       className="discover-page"
       w={"100%"}
       pt={"78px"}
-      mb={"30px"}
       px={{ base: "30px", lg: "40px" }}
       minH={`calc(100vh - ${95}px)`}
       bgColor={"#FAFBFC"}
@@ -36,7 +35,7 @@ export default function Discover() {
         <Flex
           flexDir={"column"}
           pt={"120px"}
-          pb="90px"
+          pb={{ base: "60px", lg: "90px" }}
           gap={{ base: "60px", md: "120px" }}
         >
           <Flex flexDir={"column"} gap={"15px"}>
