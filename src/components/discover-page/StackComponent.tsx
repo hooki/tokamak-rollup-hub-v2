@@ -40,7 +40,17 @@ export const StackComponent: React.FC<SubProductDetailType> = ({
       >
         {name}
       </Text>
-      <Text fontSize={"14px"} fontWeight={400} lineHeight={"normal"}>
+      <Text
+        fontSize={"14px"}
+        fontWeight={400}
+        lineHeight={"normal"}
+        style={{
+          display: "-webkit-box",
+          WebkitBoxOrient: "vertical",
+          overflow: "hidden",
+        }}
+        WebkitLineClamp={3}
+      >
         {description}
       </Text>
       <Text

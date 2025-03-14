@@ -47,7 +47,7 @@ export const SUB_PRODUCT_CATEGORIES: Record<string, SubProductDetailType[]> = {
   ],
   integration: [
     {
-      id: "block-explorer",
+      id: "thanos-explorer",
       name: "Thanos Explorer",
       description:
         "A tool for exploring and searching the Thanos networks for transactions, blocks, and other network activity.",

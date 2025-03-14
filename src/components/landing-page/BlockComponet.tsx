@@ -22,8 +22,8 @@ export default function BlockComponent() {
           <Image
             src={DotLogoImage}
             alt="dot-logo"
-            width={width < 400 ? 337 : 435}
-            height={width < 400 ? 155 : 198}
+            width={width < 800 ? 337 : 492}
+            height={width < 800 ? 185 : 270}
           />
         </Flex>
         <Flex flexDir={"column"} gap={"12px"}>

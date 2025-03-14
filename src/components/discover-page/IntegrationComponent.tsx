@@ -1,9 +1,11 @@
 "use client";
 import { SubProductDetailType } from "@/types/products";
-import { Box, Button, Flex, Text } from "@chakra-ui/react";
+import { Button, Flex, Text } from "@chakra-ui/react";
 import { useRouter } from "next/navigation";
+import { IntegrationLogo } from "../ui/integration-logo";
 
 export const IntegrationComponent: React.FC<SubProductDetailType> = ({
+  id,
   name,
   description,
   link,
@@ -24,14 +26,7 @@ export const IntegrationComponent: React.FC<SubProductDetailType> = ({
       minHeight={"320px"}
     >
       <Flex flexDirection={"column"} gap={"15px"} alignItems={"center"}>
-        <Box
-          width={"60px"}
-          height={"60px"}
-          p={"27px 14px"}
-          borderRadius={"35px"}
-          border={"1px solid #E1E8ED"}
-          bgColor={"#FFF"}
-        ></Box>
+        <IntegrationLogo name={id} />
         <Flex flexDirection={"column"} alignItems={"center"}>
           <Text
             fontSize={"16px"}
@@ -62,7 +57,7 @@ export const IntegrationComponent: React.FC<SubProductDetailType> = ({
           WebkitBoxOrient: "vertical",
           overflow: "hidden",
         }}
-        WebkitLineClamp={4}
+        WebkitLineClamp={3}
       >
         {description}
       </Text>

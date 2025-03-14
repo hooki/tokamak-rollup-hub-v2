@@ -1,11 +1,6 @@
 "use client";
 import { PRODUCT_CATEGORIES, SUB_CATEGORY_MAP } from "@/consts/components";
-import { AccordionItemTrigger, Flex, Stack, Text } from "@chakra-ui/react";
-import {
-  AccordionItem,
-  AccordionItemContent,
-  AccordionRoot,
-} from "@/components/ui/accordion";
+import { Flex, Stack, Text } from "@chakra-ui/react";
 import Image from "next/image";
 import { ProductCategoryType } from "@/types/products";
 import DropdownIcon from "@/assets/icon/dropdown.svg";
@@ -36,94 +31,79 @@ const AccordionComponent = ({
       >
         Categories
       </Text>
-      <AccordionRoot
-        defaultValue={["all"]}
-        cursor={"pointer"}
-        w={"100%"}
-        value={[currentCategory]}
-        onValueChange={(e) => {
-          if (!e.value[0]) {
-            setCurrentCategory("all");
-            setCurrentItem(null);
-          } else {
-            setCurrentCategory(e.value[0] as ProductCategoryType);
-            setCurrentItem(null);
-          }
-        }}
-        collapsible
-        spaceY={"6px"}
-      >
-        {PRODUCT_CATEGORIES.map((item) => (
-          <AccordionItem key={item.id} value={item.id} w={"100%"}>
-            <AccordionItemTrigger
-              cursor={"pointer"}
-              w={"100%"}
-              h={"36px"}
-              border="none"
-              fontFamily={"Proxima Nova"}
-              display={"flex"}
-              borderRadius={"6px"}
-              pl={"15px"}
-              alignItems={"center"}
-              fontSize={"16px"}
-              fontWeight={500}
-              lineHeight={"normal"}
-              letterSpacing={"-0.4px"}
-              bg={
-                currentCategory.includes(item.id) && !currentItem
-                  ? "#1C1C1C"
-                  : "transparent"
-              }
-              color={
-                currentCategory.includes(item.id) && !currentItem
-                  ? "#FFF"
-                  : "#1C1C1C"
-              }
-              _hover={{
-                bg: "#1C1C1C",
-                color: "#FFF",
-              }}
-            >
-              {item.name}
-            </AccordionItemTrigger>
-            <AccordionItemContent>
-              <Stack
-                direction={"column"}
-                w={"100%"}
-                gap={"6px"}
-                mt={SUB_CATEGORY_MAP[item.id].length > 0 ? "6px" : "0px"}
+      {PRODUCT_CATEGORIES.map((item) => (
+        <Flex key={item.id} flexDir={"column"} gap={"6px"}>
+          <Text
+            pl={"15px"}
+            display={"flex"}
+            alignItems={"center"}
+            borderRadius={"6px"}
+            cursor={"pointer"}
+            bgColor={
+              currentCategory === item.id && currentItem === null
+                ? "#1C1C1C"
+                : "transparent"
+            }
+            color={
+              currentCategory === item.id && currentItem === null
+                ? "#FFF"
+                : "#1C1C1C"
+            }
+            _hover={{
+              bg: "#1C1C1C",
+              color: "#FFF",
+            }}
+            onClick={() => {
+              setCurrentCategory(item.id as ProductCategoryType);
+              setCurrentItem(null);
+            }}
+            key={item.id}
+            height={"36px"}
+            fontSize={"16px"}
+            fontWeight={500}
+            letterSpacing={"-0.48px"}
+          >
+            {item.name}
+          </Text>
+          <Flex
+            flexDir={"column"}
+            gap={"6px"}
+            display={
+              SUB_CATEGORY_MAP[item.id].length > 0 &&
+              (currentCategory === item.id || currentCategory === "all")
+                ? "flex"
+                : "none"
+            }
+          >
+            {SUB_CATEGORY_MAP[item.id].map((subItem) => (
+              <Text
+                display={"flex"}
+                alignItems={"center"}
+                borderRadius={"6px"}
+                cursor={"pointer"}
+                bgColor={currentItem === subItem ? "#1C1C1C" : "transparent"}
+                color={currentItem === subItem ? "#FFF" : "#1C1C1C"}
+                _hover={{
+                  bg: "#1C1C1C",
+                  color: "#FFF",
+                }}
+                key={subItem}
+                pl={"45px"}
+                height={"36px"}
+                fontSize={"16px"}
+                fontWeight={500}
+                letterSpacing={"-0.48px"}
+                onClick={() => {
+                  setCurrentItem(subItem);
+                  setCurrentCategory(item.id as ProductCategoryType);
+                }}
               >
-                {SUB_CATEGORY_MAP[item.id].map((subItem) => (
-                  <Text
-                    pl={"45px"}
-                    key={subItem}
-                    h={"36px"}
-                    w={"100%"}
-                    display={"flex"}
-                    alignItems={"center"}
-                    borderRadius={"6px"}
-                    fontSize={"16px"}
-                    fontWeight={500}
-                    lineHeight={"normal"}
-                    letterSpacing={"-0.4px"}
-                    bg={currentItem === subItem ? "#1C1C1C" : "transparent"}
-                    color={currentItem === subItem ? "#FFF" : "#1C1C1C"}
-                    _hover={{
-                      bg: "#1C1C1C",
-                      color: "#FFF",
-                    }}
-                    onClick={() => {
-                      setCurrentItem(subItem);
-                    }}
-                  >
-                    {subItem}
-                  </Text>
-                ))}
-              </Stack>
-            </AccordionItemContent>
-          </AccordionItem>
-        ))}
-      </AccordionRoot>
+                {subItem}
+              </Text>
+            ))}
+          </Flex>
+        </Flex>
+      ))}
     </Stack>
   );
 };

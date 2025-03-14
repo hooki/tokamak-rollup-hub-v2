@@ -31,7 +31,7 @@ export default function Footer() {
           fontWeight={400}
           letterSpacing={"0.55px"}
           lineHeight={"normal"}
-          color={"#999999"}
+          color={"#999"}
         >
           ©2025 
           <Text as={"span"} color={"#1C1C1C"}>
