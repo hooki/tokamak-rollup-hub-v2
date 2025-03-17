@@ -3,11 +3,29 @@ import { TRH_V1_URL } from "@/consts/urls";
 import DropdownIcon from "@/assets/icon/dropdown.svg";
 import { Flex, Link, Text } from "@chakra-ui/react";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
+
 export default function VersionDropDownComponent() {
   const [isOpen, setIsOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+  const handleClickOutside = (event: MouseEvent) => {
+    if (
+      dropdownRef.current &&
+      !dropdownRef.current.contains(event.target as Node)
+    ) {
+      setIsOpen(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
   return (
     <Flex
+      ref={dropdownRef}
       display={{ base: "none", md: "flex" }}
       py="9px"
       alignItems="flex-start"
@@ -38,7 +56,16 @@ export default function VersionDropDownComponent() {
         >
           Rollup Hub V2
         </Text>
-        <Image src={DropdownIcon} alt="dropdown" width={12} height={12} />
+        <Image
+          src={DropdownIcon}
+          alt="dropdown"
+          width={12}
+          height={12}
+          style={{
+            transform: isOpen ? "rotate(180deg)" : "",
+            transition: "transform 0.1s ease-in-out",
+          }}
+        />
       </Flex>
       {isOpen && (
         <Link href={TRH_V1_URL} width={"100%"}>
