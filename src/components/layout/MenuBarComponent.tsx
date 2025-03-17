@@ -43,9 +43,13 @@ export default function MenuBarComponent({
         width={isMenuOpen ? "100%" : ""}
         gap={isMenuOpen ? "39px" : "45px"}
         display={{ base: isMenuOpen ? "flex" : "none", md: "flex" }}
+        position={"relative"}
       >
         {MENUBAR_ITEMS.map((item) => (
           <Text
+            display={"flex"}
+            alignItems={"center"}
+            justifyContent={"center"}
             key={item.label}
             color={"#2E2E3A"}
             fontSize={isMenuOpen ? "30px" : "15px"}
