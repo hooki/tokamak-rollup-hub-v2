@@ -437,11 +437,10 @@ export default function ThanosStackPage() {
               >
                 Deployment Cost
               </Text>
-              <Text
-                fontSize={"14px"}
-                fontWeight={400}
-                lineHeight={"17px"}
-              ></Text>
+              <Text fontSize={"14px"} fontWeight={400} lineHeight={"17px"}>
+                The deployment cost of the thanos stack is estimated to be
+                around 800000 * gas price.
+              </Text>
             </Flex>
           </Flex>
         </Flex>
