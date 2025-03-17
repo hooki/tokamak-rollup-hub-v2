@@ -143,7 +143,7 @@ export default function ThanosExplorerPage() {
                           Created by
                         </Text>
                         <Text fontSize={"13px"} fontWeight={700}>
-                          TOP
+                          TRH
                         </Text>
                       </Flex>
                       <Flex flexDir={"column"} gap={"3px"}>

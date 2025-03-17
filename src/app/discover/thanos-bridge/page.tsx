@@ -144,7 +144,7 @@ export default function ThanosBridgePage() {
                           Created by
                         </Text>
                         <Text fontSize={"13px"} fontWeight={700}>
-                          BEE
+                          TRH
                         </Text>
                       </Flex>
                       <Flex flexDir={"column"} gap={"3px"}>

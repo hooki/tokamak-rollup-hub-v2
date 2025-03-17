@@ -143,7 +143,7 @@ export default function ThanosStackPage() {
                           Created by
                         </Text>
                         <Text fontSize={"13px"} fontWeight={700}>
-                          TOP
+                          TRH
                         </Text>
                       </Flex>
                       <Flex flexDir={"column"} gap={"3px"}>
@@ -252,7 +252,7 @@ export default function ThanosStackPage() {
                   How to Contribute this Stack
                 </Text>
                 <Text fontSize={"15px"} fontWeight={400} lineHeight={"18px"}>
-                  The thanos chain is open source, and operators and developers
+                  The thanos stack is open source, and operators and developers
                   can extend its functionalities to suit their specific needs.
                   If you want to contribute to the thanos chain, please feel
                   free to create a PR on{" "}
