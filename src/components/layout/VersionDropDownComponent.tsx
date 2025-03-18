@@ -26,7 +26,6 @@ export default function VersionDropDownComponent() {
   return (
     <Flex
       ref={dropdownRef}
-      display={{ base: "none", md: "flex" }}
       py="9px"
       alignItems="flex-start"
       gap="10px"
@@ -37,7 +36,7 @@ export default function VersionDropDownComponent() {
       cursor={"pointer"}
       flexDir={"column"}
       position={"absolute"}
-      right={"30px"}
+      right={{ base: "76px", md: "30px" }}
       top={"20px"}
     >
       <Flex

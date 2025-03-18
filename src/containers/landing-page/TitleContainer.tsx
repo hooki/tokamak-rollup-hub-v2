@@ -14,13 +14,13 @@ export default function TitleContainer() {
       width={"100%"}
       justifyContent={"center"}
       alignItems={"center"}
-      height={{ base: "785px", md: "100vh" }}
+      height={{ base: "833px", md: "100vh" }}
       position={"relative"}
       className="title-component"
     >
       <Box
         position={{ base: "absolute", md: "relative" }}
-        top={{ base: "285px", md: "0" }}
+        top={{ base: "307px", md: "0" }}
         left={{ base: "50%", md: "0" }}
         transform={{ base: "translate(-50%, 0%)", md: "translate(0%, 0%)" }}
       >

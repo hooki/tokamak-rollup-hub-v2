@@ -30,7 +30,7 @@ export default function Header() {
     <>
       <Flex
         h={isMenuOpen ? "100vh" : "78px"}
-        px={{ base: "20px", sm: "30px" }}
+        px={{ base: "20px", md: "30px" }}
         justifyContent={"space-between"}
         alignItems={"center"}
         position={"fixed"}
@@ -50,7 +50,7 @@ export default function Header() {
           isMenuOpen={isMenuOpen}
           setIsMenuOpen={setIsMenuOpen}
         />
-        <VersionDropDownComponent />
+        {!isMenuOpen && <VersionDropDownComponent />}
       </Flex>
     </>
   );
