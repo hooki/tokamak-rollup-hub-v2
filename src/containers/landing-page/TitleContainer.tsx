@@ -5,6 +5,8 @@ import Image from "next/image";
 import TrhCenterIcon from "@/assets/trh-center.svg";
 import { useBreakpoint } from "@/hooks/breakpoint";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
+import { USER_GUIDE_URL } from "@/consts/urls";
 export default function TitleContainer() {
   const { isMobile, isTablet } = useBreakpoint();
   const imageWidth = isMobile ? 75 : isTablet ? 125 : 200;
@@ -77,30 +79,32 @@ export default function TitleContainer() {
           </Text>
         </Flex>
         <Flex gap={"15px"} zIndex={50}>
-          <Button
-            px={"15px"}
-            py={"12px"}
-            width={"132px"}
-            height={"45px"}
-            borderRadius={"23px"}
-            alignItems={"center"}
-            justifyContent={"center"}
-            fontFamily={"Proxima Nova"}
-            fontSize={"14px"}
-            fontWeight={600}
-            textAlign={"center"}
-            border={"2px solid #DFE4EE"}
-            background={"rgba(255, 255, 255, 0.25)"}
-            color={"#1C1C1C"}
-            cursor={"pointer"}
-            _hover={{
-              background: "#1C1C1C",
-              color: "#FFFFFF",
-              borderColor: "#1C1C1C",
-            }}
-          >
-            Documents
-          </Button>
+          <Link href={USER_GUIDE_URL} target="_blank">
+            <Button
+              px={"15px"}
+              py={"12px"}
+              width={"132px"}
+              height={"45px"}
+              borderRadius={"23px"}
+              alignItems={"center"}
+              justifyContent={"center"}
+              fontFamily={"Proxima Nova"}
+              fontSize={"14px"}
+              fontWeight={600}
+              textAlign={"center"}
+              border={"2px solid #DFE4EE"}
+              background={"rgba(255, 255, 255, 0.25)"}
+              color={"#1C1C1C"}
+              cursor={"pointer"}
+              _hover={{
+                background: "#1C1C1C",
+                color: "#FFFFFF",
+                borderColor: "#1C1C1C",
+              }}
+            >
+              Documents
+            </Button>
+          </Link>
           <Button
             px={"15px"}
             py={"12px"}

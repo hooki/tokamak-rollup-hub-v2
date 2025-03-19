@@ -46,6 +46,7 @@ const ThanosBridgeComponent = () => {
         </>
       }
       featured={true}
+      link={"/discover/thanos-bridge"}
     />
   );
 };
@@ -53,7 +54,7 @@ const ThanosBridgeComponent = () => {
 const BlockExplorerComponent = () => {
   return (
     <CardComponent
-      title={"Block Explorer"}
+      title={"Thanos Explorer"}
       description={
         <>
           Easily deploy an explorer for your chain with our SDK and make it
@@ -61,6 +62,7 @@ const BlockExplorerComponent = () => {
         </>
       }
       featured={true}
+      link={"/discover/thanos-explorer"}
     />
   );
 };

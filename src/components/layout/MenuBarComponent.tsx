@@ -58,7 +58,11 @@ export default function MenuBarComponent({
             textAlign={"center"}
             cursor={"pointer"}
             onClick={() => {
-              router.push(item.href);
+              if (item.href.includes("http")) {
+                window.open(item.href, "_blank");
+              } else {
+                router.push(item.href);
+              }
               setIsMenuOpen(false);
             }}
             _hover={{ color: "#0070ED" }}

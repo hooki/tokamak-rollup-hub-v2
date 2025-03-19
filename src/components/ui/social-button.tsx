@@ -22,6 +22,7 @@ import discordWhiteIcon from "@/assets/icon/discord-white.svg";
 import githubWhiteIcon from "@/assets/icon/github-white.svg";
 import mediumWhiteIcon from "@/assets/icon/medium-white.svg";
 import youtubeWhiteIcon from "@/assets/icon/youtube-white.svg";
+import Link from "next/link";
 
 const iconMap = {
   telegram: telegramIcon,
@@ -59,39 +60,41 @@ export const SocialButton: React.FC<SocialButtonProps> = ({
 }) => {
   const [isHovered, setIsHovered] = useState(false);
   return (
-    <Button
-      padding={{ base: "9px 9px", md: "9px 15px" }}
-      display={"flex"}
-      justifyContent={"center"}
-      alignItems={"center"}
-      gap={"6px"}
-      borderRadius={"17.5px"}
-      border={isHovered ? "1px solid transparent" : "1px solid #DFE4EE"}
-      onClick={() => window.open(link, "_blank")}
-      bgColor={isHovered ? "#1C1C1C" : "transparent"}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-      cursor={"pointer"}
-    >
-      <Image
-        src={
-          isHovered
-            ? iconMap[`${icon}White` as keyof typeof iconMap]
-            : iconMap[icon as keyof typeof iconMap]
-        }
-        alt={label}
-        width={14}
-        height={14}
-      />
-      <Text
-        fontSize={"13px"}
-        fontWeight={600}
-        color={isHovered ? "#FFF" : "#1C1C1C"}
-        fontFamily={"Proxima Nova"}
-        display={{ base: "none", md: "flex" }}
+    <Link href={link} target="_blank">
+      <Button
+        padding={{ base: "9px 9px", md: "9px 15px" }}
+        display={"flex"}
+        justifyContent={"center"}
+        alignItems={"center"}
+        gap={"6px"}
+        borderRadius={"17.5px"}
+        border={isHovered ? "1px solid transparent" : "1px solid #DFE4EE"}
+        onClick={() => window.open(link, "_blank")}
+        bgColor={isHovered ? "#1C1C1C" : "transparent"}
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+        cursor={"pointer"}
       >
-        {label}
-      </Text>
-    </Button>
+        <Image
+          src={
+            isHovered
+              ? iconMap[`${icon}White` as keyof typeof iconMap]
+              : iconMap[icon as keyof typeof iconMap]
+          }
+          alt={label}
+          width={14}
+          height={14}
+        />
+        <Text
+          fontSize={"13px"}
+          fontWeight={600}
+          color={isHovered ? "#FFF" : "#1C1C1C"}
+          fontFamily={"Proxima Nova"}
+          display={{ base: "none", md: "flex" }}
+        >
+          {label}
+        </Text>
+      </Button>
+    </Link>
   );
 };

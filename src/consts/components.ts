@@ -34,7 +34,8 @@ export const SUB_PRODUCT_CATEGORIES: Record<string, SubProductDetailType[]> = {
         "A customized fork of the OP Stack that enables ERC20 tokens as the native currency for the L2 chain.",
       link: "/discover/thanos-stack",
       category: "stack",
-      subCategory: "OP",
+      subCategory: "Optimistic",
+      image: "/images/stacks/optimistic",
     },
     // {
     //   id: "zk-stack",

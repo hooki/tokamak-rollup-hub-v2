@@ -3,17 +3,21 @@ import { Box, Flex, Text } from "@chakra-ui/react";
 import Image from "next/image";
 import ComponentIcon from "@/assets/icon/component.svg";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 export default function CardComponent({
   title,
   description,
   featured,
+  link,
 }: {
   title: string;
   description: React.ReactNode;
   featured: boolean;
+  link?: string;
 }) {
   const [isHovered, setIsHovered] = useState(false);
+  const router = useRouter();
   return (
     <Flex
       flexDir={"column"}
@@ -29,6 +33,9 @@ export default function CardComponent({
       onMouseLeave={() => setIsHovered(false)}
       cursor={"pointer"}
       minH={"270px"}
+      onClick={() => {
+        if (link) router.push(link);
+      }}
     >
       <Flex gap={"15px"} alignItems={"center"}>
         <Image src={ComponentIcon} alt="component" />

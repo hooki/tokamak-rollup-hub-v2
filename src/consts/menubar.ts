@@ -1,3 +1,5 @@
+import { GET_HELP_URL, USER_GUIDE_URL } from "./urls";
+
 export const MENUBAR_ITEMS = [
   {
     label: "Discover",
@@ -5,10 +7,10 @@ export const MENUBAR_ITEMS = [
   },
   {
     label: "User Guide",
-    href: "/user-guide",
+    href: USER_GUIDE_URL,
   },
   {
     label: "Get Help",
-    href: "/get-help",
+    href: GET_HELP_URL,
   },
 ];

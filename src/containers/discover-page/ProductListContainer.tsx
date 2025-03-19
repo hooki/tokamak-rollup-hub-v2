@@ -57,7 +57,7 @@ export const ProductListContainer: React.FC<{
       gap={"39px"}
       alignItems={"center"}
     >
-      <Flex flexDir={"column"} gap={"120px"} width={"100%"}>
+      <Flex flexDir={"column"} gap={"90px"} width={"100%"}>
         {(category === "all" || category === "stack") && (
           <Flex
             flexDir={"column"}

@@ -6,6 +6,7 @@ import Image from "next/image";
 import { SocialButton } from "@/components/ui/social-button";
 import { IntegrationLogo } from "@/components/ui/integration-logo";
 import { useState } from "react";
+import { THANOS_STACK_DEPLOYMENT_GUIDE_URL } from "@/consts/urls";
 const BackButton = () => {
   const router = useRouter();
   const [isHover, setIsHover] = useState(false);
@@ -231,9 +232,7 @@ export default function ThanosStackPage() {
                   <Link
                     _hover={{ textDecoration: "underline" }}
                     color={"#0070ED"}
-                    href={
-                      "https://docs.tokamak.network/home/service-guide/rollup-hub/mainnet-beta/deployment-configuration-parameters"
-                    }
+                    href={THANOS_STACK_DEPLOYMENT_GUIDE_URL}
                   >
                     this guide
                   </Link>
@@ -260,6 +259,7 @@ export default function ThanosStackPage() {
                     _hover={{ textDecoration: "underline" }}
                     color={"#0070ED"}
                     href={"https://github.com/tokamak-network/tokamak-thanos"}
+                    target="_blank"
                   >
                     Github
                   </Link>

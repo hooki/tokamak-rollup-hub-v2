@@ -6,6 +6,10 @@ import Image from "next/image";
 import { SocialButton } from "@/components/ui/social-button";
 import { IntegrationLogo } from "@/components/ui/integration-logo";
 import { useState } from "react";
+import {
+  THANOS_BRIDGE_DEPLOYMENT_GUIDE_URL,
+  THANOS_BRIDGE_USER_GUIDE_URL,
+} from "@/consts/urls";
 const BackButton = () => {
   const router = useRouter();
   const [isHover, setIsHover] = useState(false);
@@ -167,9 +171,7 @@ export default function ThanosBridgePage() {
                       <SocialButton
                         icon={"document"}
                         label={"Document"}
-                        link={
-                          "https://docs.tokamak.network/home/service-guide/rollup-hub/mainnet-beta/additional-features/mini-bridge"
-                        }
+                        link={THANOS_BRIDGE_USER_GUIDE_URL}
                       />
                     </Flex>
                   </Flex>
@@ -224,9 +226,8 @@ export default function ThanosBridgePage() {
                   <Link
                     _hover={{ textDecoration: "underline" }}
                     color={"#0070ED"}
-                    href={
-                      "https://docs.tokamak.network/home/service-guide/rollup-hub/mainnet-beta/additional-features/mini-bridge/deployment-guide"
-                    }
+                    href={THANOS_BRIDGE_DEPLOYMENT_GUIDE_URL}
+                    target="_blank"
                   >
                     this guide
                   </Link>
