@@ -192,6 +192,7 @@ export default function ThanosStackPage() {
                       "https://github.com/ethereum-optimism/optimism/releases/tag/op-node%2Fv1.12.0"
                     }
                     color={"#0070ED"}
+                    target="_blank"
                   >
                     OP Stack v1.12.0
                   </Link>{" "}
@@ -233,6 +234,7 @@ export default function ThanosStackPage() {
                     _hover={{ textDecoration: "underline" }}
                     color={"#0070ED"}
                     href={THANOS_STACK_DEPLOYMENT_GUIDE_URL}
+                    target="_blank"
                   >
                     this guide
                   </Link>
