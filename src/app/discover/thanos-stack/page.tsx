@@ -416,7 +416,7 @@ export default function ThanosStackPage() {
                   fontWeight={700}
                   lineHeight={"17px"}
                 >
-                  Earn TON as rewards
+                  Earn TON as rewards (Coming Soon)
                   <Text
                     as={"span"}
                     fontSize={"13px"}
@@ -440,8 +440,10 @@ export default function ThanosStackPage() {
                 Deployment Cost
               </Text>
               <Text fontSize={"14px"} fontWeight={400} lineHeight={"17px"}>
-                The deployment cost of the thanos stack is estimated to be
-                around 800000 * gas price.
+                The maximum L1 contract deployment cost on Thanos Stack is
+                estimated to be around gas price * 80,000,000 (Wei).
+                Additionally, both testnet and mainnet deployments will incur
+                AWS infrastructure costs based on usage.
               </Text>
             </Flex>
           </Flex>
