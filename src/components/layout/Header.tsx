@@ -43,14 +43,13 @@ export default function Header() {
             ? "rgba(250, 251, 252, 0.75)"
             : "transparent"
         }
-        pr={{ base: "20px", md: "218px" }}
+        pr={"20px"}
       >
         {!isMenuOpen && <LogoComponent />}
         <MenuBarComponent
           isMenuOpen={isMenuOpen}
           setIsMenuOpen={setIsMenuOpen}
         />
-        {!isMenuOpen && <VersionDropDownComponent />}
       </Flex>
     </>
   );
