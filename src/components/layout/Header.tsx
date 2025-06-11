@@ -3,7 +3,6 @@ import { Flex } from "@chakra-ui/react";
 import LogoComponent from "./LogoComponent";
 import MenuBarComponent from "./MenuBarComponent";
 import { useEffect, useState } from "react";
-import VersionDropDownComponent from "./VersionDropDownComponent";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
