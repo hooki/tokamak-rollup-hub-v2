@@ -1,12 +1,13 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nova+Mono&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #1c1c1c;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #ffffff;
+    --foreground: #1c1c1c;
   }
 }
 
@@ -19,9 +20,14 @@ body {
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Proxima Nova, Montserrat, system-ui, Open Sans, ui-sans-serif,
+    Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  ::selection {
+    background: #0070edb1;
+    color: #fff;
+  }
 }
 
 * {
@@ -39,4 +45,22 @@ a {
   html {
     color-scheme: dark;
   }
+}
+
+.arrow-icon {
+  width: 27px;
+  height: 27px;
+  stroke-width: 5;
+  cursor: pointer;
+  &:hover {
+    color: #0070ed;
+  }
+}
+
+.carousel-item {
+  padding-left: 44px;
+}
+
+.carousel-container {
+  margin-left: -44px;
 }
