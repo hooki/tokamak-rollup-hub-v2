@@ -1,5 +1,5 @@
 "use client";
-import { Flex } from "@chakra-ui/react";
+import { HStack } from "@chakra-ui/react";
 import LogoComponent from "./LogoComponent";
 import MenuBarComponent from "./MenuBarComponent";
 import { useEffect, useState } from "react";
@@ -26,30 +26,27 @@ export default function Header() {
   }, []);
 
   return (
-    <>
-      <Flex
-        h={isMenuOpen ? "100vh" : "78px"}
-        px={{ base: "20px", md: "30px" }}
-        justifyContent={"space-between"}
-        alignItems={"center"}
-        position={"fixed"}
-        width={"100%"}
-        zIndex={1000}
-        backgroundColor={
-          isMenuOpen
-            ? "#FAFBFC"
-            : isScrolled
-            ? "rgba(250, 251, 252, 0.75)"
+    <HStack
+      h={isMenuOpen ? "100vh" : "78px"}
+      px={{ base: "20px", md: "30px", lg: "90px" }}
+      justifyContent={"space-between"}
+      alignItems={"center"}
+      position={"fixed"}
+      width={"100%"}
+      zIndex={1000}
+      bg={
+        isMenuOpen
+          ? "#FAFBFC"
+          : isScrolled
+            ? "white"
             : "transparent"
-        }
-        pr={"20px"}
-      >
-        {!isMenuOpen && <LogoComponent />}
-        <MenuBarComponent
-          isMenuOpen={isMenuOpen}
-          setIsMenuOpen={setIsMenuOpen}
-        />
-      </Flex>
-    </>
+      }
+    >
+      {!isMenuOpen && <LogoComponent />}
+      <MenuBarComponent
+        isMenuOpen={isMenuOpen}
+        setIsMenuOpen={setIsMenuOpen}
+      />
+    </HStack>
   );
 }
