@@ -4,8 +4,17 @@ export interface SubProductDetailType {
   description: string;
   link?: string;
   category: string;
-  subCategory?: string;
+  subCategories?: {name: string, bg?: string, color?: string}[];
   image?: string;
+}
+
+export interface IntegrationDetailType {
+  id: string;
+  name: string;
+  description: string;
+  link: string;
+  category: string;
+  subCategory: string;
 }
 
 export interface ProductDetailType {

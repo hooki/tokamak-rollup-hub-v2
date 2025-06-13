@@ -60,6 +60,7 @@ export default function Discover() {
             <Text
               fontSize={{ base: "13px", md: "24px" }}
               fontWeight={400}
+              color={"#71717a"}
               lineHeight={"normal"}
             >
               Browse through all the things you want to find.

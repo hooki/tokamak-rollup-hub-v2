@@ -1,4 +1,4 @@
-import { ProductDetailType, SubProductDetailType } from "@/types/products";
+import { IntegrationDetailType, ProductDetailType, SubProductDetailType } from "@/types/products";
 
 export const PRODUCT_CATEGORIES: ProductDetailType[] = [
   {
@@ -24,7 +24,7 @@ export const SUB_CATEGORY_MAP: Record<string, string[]> = {
   integration: ["Block Explorer", "Bridge"],
 };
 
-export const SUB_PRODUCT_CATEGORIES: Record<string, SubProductDetailType[]> = {
+export const SUB_PRODUCT_CATEGORIES: Record<string, SubProductDetailType[] | IntegrationDetailType[]> = {
   all: [],
   stack: [
     {
@@ -34,7 +34,9 @@ export const SUB_PRODUCT_CATEGORIES: Record<string, SubProductDetailType[]> = {
         "A customized fork of the OP Stack that enables ERC20 tokens as the native currency for the L2 chain.",
       link: "/discover/thanos-stack",
       category: "stack",
-      subCategory: "Optimistic",
+      subCategories: [
+        {name: "Optimistic", bg: "#dbeafe", color: "#1e40af"},
+      ],
       image: "/images/stacks/optimistic",
     },
     // {
@@ -44,6 +46,9 @@ export const SUB_PRODUCT_CATEGORIES: Record<string, SubProductDetailType[]> = {
     //     "An advanced virtual machine for Layer 2, optimized for compatibility with ZKSNARKS. It features an innovative L2 rollup architecture that reduces computational complexity while preserving security and privacy.",
     //   link: "https://github.com/thanos-labs/thanos",
     //   category: "stack",
+    //   subCategories: [
+    //     {name: "ZK", bg: "#dcfce7", color: "#166534"},
+    //   ],
     // },
   ],
   integration: [
@@ -54,7 +59,7 @@ export const SUB_PRODUCT_CATEGORIES: Record<string, SubProductDetailType[]> = {
         "A tool for exploring and searching the Thanos networks for transactions, blocks, and other network activity.",
       link: "/discover/thanos-explorer",
       category: "integration",
-      subCategory: "Block Explorer",
+      subCategory: "Block Explorer"
     },
     {
       id: "thanos-bridge",
@@ -63,7 +68,7 @@ export const SUB_PRODUCT_CATEGORIES: Record<string, SubProductDetailType[]> = {
         "Thanos Bridge allows users to transfer assets between your deployed Thanos stack and L1. It supports a number of assets including TON, ETH, USDC and integrates quickly for seamless usability.",
       link: "/discover/thanos-bridge",
       category: "integration",
-      subCategory: "Bridge",
+      subCategory: "Bridge"
     },
     // {
     //   id: "earn-ton-as-reward",

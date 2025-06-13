@@ -1,21 +1,21 @@
 "use client";
 import { SubProductDetailType } from "@/types/products";
-import { Box, Flex, Text } from "@chakra-ui/react";
+import { Box, Flex, Text, Badge, VStack, HStack } from "@chakra-ui/react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-import { BsArrowRightCircleFill } from "react-icons/bs";
+import { BsChevronRight } from "react-icons/bs";
 export const StackComponent: React.FC<SubProductDetailType> = ({
   name,
   description,
   link,
-  subCategory,
+  subCategories,
   image,
 }) => {
   const router = useRouter();
   const [isHovered, setIsHovered] = useState(false);
   return (
-    <Flex
+    <VStack
       cursor={"pointer"}
       flexDir={"column"}
       justifyContent={"space-between"}
@@ -32,14 +32,21 @@ export const StackComponent: React.FC<SubProductDetailType> = ({
       position={"relative"}
     >
       <Flex flexDir={"column"} gap={"12px"}>
-        <Text fontSize={"13px"} fontWeight={600} lineHeight={"normal"}>
-          {subCategory}
-        </Text>
-        <Flex flexDir={"column"} gap={"9px"}>
+        {
+          subCategories?.map((category) => (
+            <Box key={category.name}>
+              <Badge bg={category.bg} color={category.color} fontSize={"13px"} fontWeight={600} px={"10px"} py={"4px"} borderRadius={"10px"}>
+                {category.name}
+              </Badge>
+            </Box>
+
+          ))
+        }
+
+        <Flex flexDir={"column"} gap={"12px"}>
           <Text
             fontSize={"24px"}
             fontWeight={700}
-            lineHeight={"normal"}
             textOverflow={"ellipsis"}
           >
             {name}
@@ -47,7 +54,7 @@ export const StackComponent: React.FC<SubProductDetailType> = ({
           <Text
             fontSize={"14px"}
             fontWeight={400}
-            lineHeight={"normal"}
+            color={"#71717A"}
             style={{
               display: "-webkit-box",
               WebkitBoxOrient: "vertical",
@@ -59,20 +66,19 @@ export const StackComponent: React.FC<SubProductDetailType> = ({
           </Text>
         </Flex>
       </Flex>
-      <Flex alignItems={"center"} gap={"9px"}>
-        <BsArrowRightCircleFill
-          size={"22px"}
-          color={isHovered ? "#0070ED" : "#1C1C1C"}
-        />
+
+      <HStack alignItems={"center"} gap={"9px"} fontSize={"13px"} fontWeight={700}>
         <Text
-          fontSize={"13px"}
-          fontWeight={700}
           lineHeight={"normal"}
-          color={isHovered ? "#0070ED" : "#1C1C1C"}
+          color={isHovered ? "#173da6" : "#3b82f6"}
         >
-          Find more
+          Learn more
         </Text>
-      </Flex>
+        <BsChevronRight
+          color={isHovered ? "#173da6" : "#3b82f6"}
+        />
+      </HStack>
+
       {image && (
         <Box
           position={"absolute"}
@@ -92,6 +98,6 @@ export const StackComponent: React.FC<SubProductDetailType> = ({
           />
         </Box>
       )}
-    </Flex>
+    </VStack>
   );
 };

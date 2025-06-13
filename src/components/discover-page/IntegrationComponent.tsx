@@ -1,10 +1,12 @@
 "use client";
-import { SubProductDetailType } from "@/types/products";
-import { Button, Flex, Text } from "@chakra-ui/react";
+import type { IntegrationDetailType } from "@/types/products";
+import { Flex, Text, HStack, VStack } from "@chakra-ui/react";
 import { useRouter } from "next/navigation";
 import { IntegrationLogo } from "../ui/integration-logo";
+import { BsChevronRight } from "react-icons/bs";
+import { useState } from "react";
 
-export const IntegrationComponent: React.FC<SubProductDetailType> = ({
+export const IntegrationComponent: React.FC<IntegrationDetailType> = ({
   id,
   name,
   description,
@@ -12,11 +14,11 @@ export const IntegrationComponent: React.FC<SubProductDetailType> = ({
   subCategory,
 }) => {
   const router = useRouter();
+  const [isHovered, setIsHovered] = useState(false);
   return (
-    <Flex
-      flexDirection={"column"}
-      justifyContent={"space-between"}
-      alignItems={"center"}
+    <VStack
+      justify={"space-between"}
+      align={"stretch"}
       width={"100%"}
       padding={"24px 20px"}
       borderRadius={"15px"}
@@ -25,33 +27,23 @@ export const IntegrationComponent: React.FC<SubProductDetailType> = ({
       height={"100%"}
       minHeight={"320px"}
     >
-      <Flex flexDirection={"column"} gap={"15px"} alignItems={"center"}>
+      <HStack fontSize={"16px"} fontWeight={700} align={"center"} justify={"start"}>
         <IntegrationLogo name={id} />
-        <Flex flexDirection={"column"} alignItems={"center"}>
-          <Text
-            fontSize={"16px"}
-            fontWeight={700}
-            lineHeight={"normal"}
-            letterSpacing={"-0.48px"}
-          >
+        <VStack alignItems={"flex-start"} gap={0}>
+          <Text>
             {name}
           </Text>
-          <Text
-            fontSize={"12px"}
-            fontWeight={500}
-            lineHeight={"20px"}
-            color={"#252525"}
-          >
+          <Text fontSize={"12px"} fontWeight={500} lineHeight={"20px"} color={"#71717a"}>
             {subCategory}
           </Text>
-        </Flex>
-      </Flex>
+        </VStack>
+      </HStack>
+
       <Text
         fontSize={"14px"}
         fontWeight={400}
         lineHeight={"24px"}
-        textAlign={"center"}
-        color={"#252525"}
+        color={"#71717a"}
         style={{
           display: "-webkit-box",
           WebkitBoxOrient: "vertical",
@@ -61,27 +53,18 @@ export const IntegrationComponent: React.FC<SubProductDetailType> = ({
       >
         {description}
       </Text>
-      <Button
-        width={"100%"}
-        p={"9px 15px"}
-        borderRadius={"17.5px"}
-        border={"1px solid #DFE4EE"}
-        bgColor={"rgba(255, 255, 255, 0.25)"}
-        fontSize={"14px"}
-        fontWeight={600}
-        lineHeight={"normal"}
-        color={"#1C1C1C"}
-        _hover={{
-          bgColor: "#1C1C1C",
-          color: "#FFF",
-          border: "1px solid transparent",
-        }}
-        cursor={"pointer"}
-        fontFamily={"Proxima Nova"}
-        onClick={() => router.push(link || "")}
-      >
-        Find more
-      </Button>
-    </Flex>
+
+      <HStack alignItems={"center"} gap={"9px"} fontSize={"13px"} fontWeight={700} onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)} cursor={"pointer"} onClick={() => router.push(link || "")}>
+        <Text
+          lineHeight={"normal"}
+          color={isHovered ? "#173da6" : "#3b82f6"}
+        >
+          Learn more
+        </Text>
+        <BsChevronRight
+          color={isHovered ? "#173da6" : "#3b82f6"}
+        />
+      </HStack>
+    </VStack>
   );
 };

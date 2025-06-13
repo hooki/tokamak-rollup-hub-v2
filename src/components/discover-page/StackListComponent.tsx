@@ -24,14 +24,14 @@ export const StackListComponent: React.FC<{
         >
           Stack
         </Text>
-        <Text fontSize={"16px"} fontWeight={400} lineHeight={"20px"}>
+        <Text fontSize={"16px"} fontWeight={400} lineHeight={"20px"} color={"#71717a"}>
           Meet the L2 Stack created by various developers.
         </Text>
       </Flex>
       <Grid
         templateColumns={{
           base: "repeat(1, 1fr)",
-          md: "repeat(2, 1fr)",
+          md: `repeat(${stacks.length > 2 ? 2 : stacks.length}, 1fr)`,
         }}
         gap={"30px"}
       >
