@@ -1,12 +1,13 @@
-import { Flex, Text } from "@chakra-ui/react";
+"use client";
+
+import { Box, Container, Flex, Text, Link, HStack, For } from "@chakra-ui/react";
+import Image from "next/image";
 import GithubIcon from "@/assets/icon/github.svg";
 import TelegramIcon from "@/assets/icon/telegram.svg";
 import DiscordIcon from "@/assets/icon/discord.svg";
 import TwitterIcon from "@/assets/icon/twitter.svg";
 import MediumIcon from "@/assets/icon/medium.svg";
 import YoutubeIcon from "@/assets/icon/youtube.svg";
-import Image from "next/image";
-import Link from "next/link";
 import {
   DISCORD_URL,
   GITHUB_URL,
@@ -17,51 +18,60 @@ import {
 } from "@/consts/socials";
 
 export default function Footer() {
+  const socialLinks = [
+    { href: GITHUB_URL, icon: GithubIcon, alt: "GitHub" },
+    { href: TELEGRAM_URL, icon: TelegramIcon, alt: "Telegram" },
+    { href: DISCORD_URL, icon: DiscordIcon, alt: "Discord" },
+    { href: TWITTER_URL, icon: TwitterIcon, alt: "Twitter" },
+    { href: MEDIUM_URL, icon: MediumIcon, alt: "Medium" },
+    { href: YOUTUBE_URL, icon: YoutubeIcon, alt: "Youtube" }
+  ];
+
   return (
-    <Flex px={"30px"} py={"24px"} background={"#FAFBFC"}>
-      <Flex
-        width={"100%"}
-        gap={"18px"}
-        alignItems={"center"}
-        flexDir={{ base: "column", md: "row" }}
-      >
-        <Text
-          fontFamily={"Open Sans"}
-          fontSize={"11px"}
-          fontWeight={400}
-          letterSpacing={"0.55px"}
-          lineHeight={"normal"}
-          color={"#999"}
+    <Box
+      as="footer"
+      bg="white"
+      color="#71717a"
+      borderTop="1px solid #00000010"
+      py={{ base: "14px", md: "32px" }}
+      px={{ base: "0", md: "30px", lg: "90px" }}
+    >
+      <Container maxW="7xl" px={{ base: 4, sm: 6, lg: 8 }}>
+        <Flex
+          direction={{ base: "column", md: "row" }}
+          justify="space-between"
+          align="center"
         >
-          ©2025 
-          <Text as={"span"} color={"#1C1C1C"}>
-            Tokamak Rollup Hub
-          </Text>{" "}
-          <Text as={"span"} display={{ base: "none", md: "inline" }}>
-            All Rights Reserved.
-          </Text>
-        </Text>
-        <Flex gap={"9px"} alignItems={"center"} justifyContent={"center"}>
-          <Link href={MEDIUM_URL} target="_blank" style={{ height: "14px" }}>
-            <Image src={MediumIcon} alt="medium" />
-          </Link>
-          <Link href={TWITTER_URL} target="_blank" style={{ height: "14px" }}>
-            <Image src={TwitterIcon} alt="twitter" />
-          </Link>
-          <Link href={GITHUB_URL} target="_blank" style={{ height: "14px" }}>
-            <Image src={GithubIcon} alt="github" />
-          </Link>
-          <Link href={YOUTUBE_URL} target="_blank" style={{ height: "14px" }}>
-            <Image src={YoutubeIcon} alt="youtube" />
-          </Link>
-          <Link href={DISCORD_URL} target="_blank" style={{ height: "14px" }}>
-            <Image src={DiscordIcon} alt="discord" />
-          </Link>
-          <Link href={TELEGRAM_URL} target="_blank" style={{ height: "14px" }}>
-            <Image src={TelegramIcon} alt="telegram" />
-          </Link>
+          <HStack gap="4px" align="center" justify="center" mb={{ base: "14px", md: "0px" }}>
+            <Text as="span" fontSize="sm" color="gray.500">
+              © 2023 Tokamak Rollup Hub.
+            </Text>
+            <Text as="span" display={{ base: "none", md: "inline" }}>
+              All Rights Reserved.
+            </Text>
+          </HStack>
+
+          <HStack gap="14px">
+            <For each={socialLinks}>
+              {(link) => (
+                <Link
+                  key={link.alt}
+                  href={link.href}
+                  target="_blank"
+                  w={{ base: "14px", md: "24px" }}
+                  h={{ base: "14px", md: "24px" }}
+                >
+                  <Image
+                    src={link.icon}
+                    alt={link.alt}
+                    style={{ width: "100%", height: "100%", filter: "brightness(0) saturate(100%) invert(51%) sepia(6%) saturate(266%) hue-rotate(201deg) brightness(92%) contrast(88%)" }}
+                  />
+                </Link>
+              )}
+            </For>
+          </HStack>
         </Flex>
-      </Flex>
-    </Flex>
+      </Container>
+    </Box >
   );
 }
