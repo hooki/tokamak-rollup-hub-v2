@@ -1,5 +1,6 @@
 "use client";
-import { Box, Button, Flex, Text } from "@chakra-ui/react";
+import { useState } from "react";
+import { Box, Button, Flex, Text, HStack } from "@chakra-ui/react";
 import RightArrowIcon from "@/assets/icon/next-icon.svg";
 import Image from "next/image";
 import TrhCenterIcon from "@/assets/trh-center.svg";
@@ -11,6 +12,7 @@ export default function TitleContainer() {
   const { isMobile, isTablet } = useBreakpoint();
   const imageWidth = isMobile ? 75 : isTablet ? 125 : 200;
   const router = useRouter();
+  const [isHovering, setIsHovering] = useState(false);
   return (
     <Flex
       width={"100%"}
@@ -105,24 +107,23 @@ export default function TitleContainer() {
               Documents
             </Button>
           </Link>
+
           <Button
             px={"15px"}
-            py={"12px"}
-            borderRadius={"23px"}
-            width={"135px"}
+            pl={"12px"}
+            width={"132px"}
             height={"45px"}
+            borderRadius={"23px"}
             border={"none"}
-            background={"#1C1C1C"}
-            color={"#FFFFFF"}
+            bg="#3b82f6"
             cursor={"pointer"}
-            justifyContent={"center"}
-            alignItems={"center"}
-            _hover={{ background: "#0070ED" }}
             onClick={() => {
               router.push("/discover");
             }}
+            onMouseEnter={() => setIsHovering(true)}
+            onMouseLeave={() => setIsHovering(false)}
           >
-            <Flex gap={"6px"} alignItems={"center"} justifyContent={"center"}>
+            <HStack justifyContent={"center"} alignItems={"center"}>
               <Text
                 fontSize={"14px"}
                 fontWeight={600}
@@ -136,11 +137,15 @@ export default function TitleContainer() {
                 alt="right-arrow"
                 width={14}
                 height={14}
+                style={{
+                  transition: "transform 0.2s",
+                  transform: isHovering ? "translateX(8px)" : "translateX(0)",
+                }}
               />
-            </Flex>
+            </HStack>
           </Button>
         </Flex>
-      </Flex>
-    </Flex>
+      </Flex >
+    </Flex >
   );
 }
