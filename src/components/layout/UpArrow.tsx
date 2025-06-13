@@ -3,6 +3,7 @@ import { Flex } from "@chakra-ui/react";
 import UpArrowIcon from "@/assets/icon/up-arrow.svg";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+
 export default function UpArrow() {
   const [isVisible, setIsVisible] = useState(false);
 
@@ -23,7 +24,7 @@ export default function UpArrow() {
   return (
     <Flex
       position={"fixed"}
-      bottom={"30px"}
+      bottom={"120px"}
       right={"30px"}
       display={isVisible ? "flex" : "none"}
       cursor={"pointer"}
