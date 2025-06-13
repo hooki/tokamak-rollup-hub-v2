@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { Box, Button, Flex, Text, HStack } from "@chakra-ui/react";
+import { Box, Button, Flex, Text, VStack, HStack } from "@chakra-ui/react";
 import RightArrowIcon from "@/assets/icon/next-icon.svg";
 import Image from "next/image";
 import TrhCenterIcon from "@/assets/trh-center.svg";
@@ -43,43 +43,37 @@ export default function TitleContainer() {
         alignItems={{ base: "center", md: "flex-start" }}
         bottom={{ base: "0", md: "30px", lg: "60px" }}
         left={{ base: "0", md: "30px", lg: "90px" }}
+        textAlign={{ base: "center", md: "left" }}
       >
-        <Flex flexDirection={"column"} gap={{ base: "12px", md: "18px" }}>
-          <Text
-            display={"flex"}
-            flexDirection={"column"}
-            fontSize={{ base: "30px", md: "54px" }}
-            fontWeight={{ base: 700, md: 600 }}
-            color={"#1C1C1C"}
-            lineHeight={{ base: "36px", md: "66px" }}
-            letterSpacing={{ base: "-0.81px", md: "-1.8px" }}
-            textTransform={"uppercase"}
-            textAlign={{ base: "center", md: "left" }}
-          >
-            L2 On-Demand{" "}
-            <Text
-              as={"span"}
-              fontSize={{ base: "30px", md: "60px" }}
-              letterSpacing={{ base: "-0.9px", md: "-1.8px" }}
-            >
-              Tailored Ethereum
+        <VStack gap={{ base: "12px", md: "18px" }}>
+          <VStack fontWeight={"bold"} gap={0} lineHeight={"1"} align="stretch" fontSize={{ base: "30px", md: "60px" }}>
+            <Text>
+              L2 ON-DEMAND
             </Text>
-          </Text>
+
+            <VStack color={"#2563eb"} gap={0} align={"stretch"}>
+              <Text>
+                TAILORED
+              </Text>
+              <Text>
+                ETHEREUM
+              </Text>
+            </VStack>
+          </VStack>
+
           <Text
             display={"flex"}
             flexDir={"column"}
             fontSize={{ base: "13px", md: "20px" }}
             fontWeight={500}
-            color={"#1C1C1C"}
-            lineHeight={{ base: "normal", md: "27px" }}
-            textAlign={{ base: "center", md: "left" }}
-          >
-            Explore and Deploy your On-Demand Appchain{" "}
+            color={"#71717a"}>
+            Explore and Deploy your On-Demand Appchain
             <Text as={"span"}>
               A Fast, Secure, and Fully Customizable L2 Appchain
-            </Text>{" "}
+            </Text>
           </Text>
-        </Flex>
+        </VStack>
+
         <Flex gap={"15px"} zIndex={50}>
           <Link href={USER_GUIDE_URL} target="_blank">
             <Button
