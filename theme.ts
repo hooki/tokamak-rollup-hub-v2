@@ -1,10 +1,10 @@
 import {
   createSystem,
-  defaultBaseConfig,
+  defaultConfig,
   defineConfig,
 } from "@chakra-ui/react";
 
-const customConfig = defineConfig({
+const config = defineConfig({
   theme: {
     breakpoints: {
       sm: "375px",
@@ -14,6 +14,6 @@ const customConfig = defineConfig({
       "2xl": "1920px",
     },
   },
-});
+})
 
-export const system = createSystem(defaultBaseConfig, customConfig);
+export const system = createSystem(defaultConfig, config)
